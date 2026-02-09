@@ -26,17 +26,40 @@ Profesjonalna strona internetowa z ofertą treningów kolarskich i fizjoterapii 
 
 ## 📦 Instalacja
 
-1. Zainstaluj zależności:
+### macOS / Linux / Windows (WSL)
+
+1. **Zainstaluj Node.js** (jeśli nie masz):
+   - Pobierz z [nodejs.org](https://nodejs.org) lub
+   - Użyj Homebrew na macOS: `brew install node`
+
+2. **Zainstaluj zależności:**
 ```bash
 npm install
 ```
 
-2. Uruchom serwer deweloperski:
+3. **Uruchom serwer deweloperski:**
 ```bash
 npm run dev
 ```
 
-3. Otwórz [http://localhost:3000](http://localhost:3000) w przeglądarce
+4. **Otwórz w przeglądarce:**
+   - [http://localhost:3000](http://localhost:3000)
+
+### 🚀 Szybki start na macOS
+
+```bash
+# 1. Klonuj repozytorium (lub skopiuj folder)
+git clone https://github.com/WielkiKrzych/kolarstwo-fizjoterapia.git
+cd kolarstwo-fizjoterapia
+
+# 2. Zainstaluj zależności
+npm install
+
+# 3. Uruchom aplikację
+npm run dev
+
+# Gotowe! Otwórz http://localhost:3000
+```
 
 ## 🏗️ Budowa produkcji
 
@@ -87,6 +110,63 @@ Kolory główne są zdefiniowane w `tailwind.config.ts`:
 ### Zawartość
 
 Cała treść znajduje się w plikach w folderach `app/` i `components/sections/`. Możesz łatwo edytować teksty, ceny i inne informacje.
+
+## 🌤️ Wdrożenie na Vercel (najprostsza opcja)
+
+1. **Zainstaluj Vercel CLI:**
+```bash
+npm install -g vercel
+```
+
+2. **W folderze projektu uruchom:**
+```bash
+vercel
+```
+
+3. **Postępuj zgodnie z instrukcjami** - strona będzie dostępna w kilka minut!
+
+## 🐘 Instrukcje dla macOS
+
+### Klonowanie z GitHub
+
+```bash
+# Otwórz Terminal i wpisz:
+cd ~/Desktop
+git clone https://github.com/WielkiKrzych/kolarstwo-fizjoterapia.git
+cd kolarstwo-fizjoterapia
+
+# Zainstaluj zależności (jeśli Node.js nie zainstalowany):
+# brew install node
+
+npm install
+npm run dev
+```
+
+### Rozwiązywanie problemów na macOS
+
+**Problem: "command not found: npm"**
+```bash
+# Zainstaluj Node.js przez Homebrew:
+brew install node
+```
+
+**Problem: "EACCES: permission denied"**
+```bash
+# Nie używaj sudo! Zamiast tego napraw uprawnienia npm:
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc
+source ~/.zshrc
+```
+
+**Problem: Port 3000 jest zajęty**
+```bash
+# Znajdź i zakończ proces na porcie 3000:
+lsof -ti:3000 | xargs kill -9
+
+# Lub uruchom na innym porcie:
+npm run dev -- -p 3001
+```
 
 ## 🔮 Przyszłe ulepszenia
 
