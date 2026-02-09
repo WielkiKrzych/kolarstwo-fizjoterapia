@@ -1,0 +1,108 @@
+# Treningi Kolarskie & Fizjoterapia Zdalna
+
+Profesjonalna strona internetowa z ofertą treningów kolarskich i fizjoterapii zdalnej, zbudowana przy użyciu Next.js, TypeScript, Tailwind CSS i Framer Motion.
+
+## 🚀 Funkcjonalności
+
+- ✅ **Strona główna** z sekcjami Hero, O nas i Oferta
+- ✅ **Treningi kolarskie** - szczegółowa oferta i cennik
+- ✅ **Fizjoterapia zdalna** - informacje o usługach
+- ✅ **Galeria** - przykładowe zdjęcia i projekty
+- ✅ **Formularz kontaktowy** - z walidacją i modalem potwierdzenia
+- ✅ **Panel logowania** - prosty interfejs uwierzytelniania
+- ✅ **Kalendarz** - interaktywny widok wydarzeń
+- ✅ **System płatności** - UI symulujący Stripe
+- ✅ **Responsywność** - mobile-first design
+- ✅ **Animacje** - Framer Motion dla płynnych przejść
+
+## 🛠️ Stos technologiczny
+
+- **Framework**: Next.js 16 (App Router)
+- **Język**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animacje**: Framer Motion
+- **Ikony**: Lucide React
+- **Pakietowanie**: npm
+
+## 📦 Instalacja
+
+1. Zainstaluj zależności:
+```bash
+npm install
+```
+
+2. Uruchom serwer deweloperski:
+```bash
+npm run dev
+```
+
+3. Otwórz [http://localhost:3000](http://localhost:3000) w przeglądarce
+
+## 🏗️ Budowa produkcji
+
+```bash
+npm run build
+npm start
+```
+
+## 📁 Struktura projektu
+
+```
+kolarstwo-fizjoterapia/
+├── app/                      # Next.js App Router
+│   ├── page.tsx             # Strona główna
+│   ├── treningi/            # Treningi kolarskie
+│   ├── fizjoterapia/        # Fizjoterapia
+│   ├── galeria/             # Galeria
+│   ├── kontakt/             # Formularz kontaktowy
+│   ├── login/               # Panel logowania
+│   ├── kalendarz/           # Kalendarz
+│   ├── platnosci/           # Płatności
+│   ├── layout.tsx           # Główny layout
+│   └── globals.css          # Globalne style
+├── components/
+│   ├── ui/                  # Komponenty UI
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Modal.tsx
+│   │   └── Navigation.tsx
+│   └── sections/            # Sekcje strony
+│       ├── Hero.tsx
+│       ├── About.tsx
+│       └── Offer.tsx
+├── lib/
+│   └── utils.ts            # Utility functions
+└── public/                  # Zasoby statyczne
+```
+
+## 🎨 Dostosowywanie
+
+### Kolory
+
+Kolory główne są zdefiniowane w `tailwind.config.ts`:
+
+- **Primary** (zielony): Dla elementów związanych z kolarstwem
+- **Accent** (niebieski): Dla elementów związanych z fizjoterapią
+
+### Zawartość
+
+Cała treść znajduje się w plikach w folderach `app/` i `components/sections/`. Możesz łatwo edytować teksty, ceny i inne informacje.
+
+## 🔮 Przyszłe ulepszenia
+
+- [ ] Backend API (Next.js API Routes)
+- [ ] Baza danych (Prisma + PostgreSQL)
+- [ ] Autoryzacja (NextAuth.js)
+- [ ] Prawdziwe płatności (Stripe)
+- [ ] Panel administracyjny
+- [ ] System rezerwacji
+- [ ] Powiadomienia email
+- [ ] Integracja z kalendarzem Google
+
+## 📝 Licencja
+
+MIT
+
+## 👨‍💻 Autor
+
+Stworzone z ❤️ przy użyciu Next.js i Tailwind CSS
