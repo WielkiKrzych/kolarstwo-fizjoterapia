@@ -6,6 +6,10 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ID
+  ? `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ID}`
+  : "https://formspree.io/f/YOUR_FORM_ID";
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -24,8 +28,7 @@ export default function ContactPage() {
     setError("");
 
     try {
-      // Wymaga konfiguracji Formspree (patrz README.md)
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
