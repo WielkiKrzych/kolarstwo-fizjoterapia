@@ -69,21 +69,22 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      value: "kontakt@prokolarz.pl",
-      link: "mailto:kontakt@prokolarz.pl",
+      value: "kubiczk@icloud.com",
+      link: "mailto:kubiczk@icloud.com",
       color: "#00f0ff",
     },
     {
       icon: Phone,
       title: "Telefon",
-      value: "+48 123 456 789",
-      link: "tel:+48123456789",
+      value: "+48 453 330 419",
+      link: "tel:+48453330419",
       color: "#ff00ff",
     },
     {
       icon: MapPin,
       title: "Lokalizacja",
       value: "Online - Cała Polska",
+      value2: "Stacjonarnie - Warszawa, Pruszków",
       link: null,
       color: "#00ff88",
     },
@@ -161,21 +162,15 @@ export default function ContactPage() {
                             {info.value}
                           </a>
                         ) : (
-                          <p className="text-white/60">{info.value}</p>
+                          <div className="text-white/60">
+                            <p>{info.value}</p>
+                            {'value2' in info && info.value2 && <p>{info.value2}</p>}
+                          </div>
                         )}
                       </div>
                     </motion.div>
                   );
                 })}
-              </div>
-
-              <div className="mt-12 glass-card rounded-xl p-6">
-                <h3 className="font-semibold text-white mb-3">Godziny pracy</h3>
-                <div className="space-y-2 text-white/60">
-                  <p>Poniedziałek - Piątek: 8:00 - 20:00</p>
-                  <p>Sobota: 9:00 - 17:00</p>
-                  <p>Niedziela: Zamknięte</p>
-                </div>
               </div>
 
               {/* Social Media */}
