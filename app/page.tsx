@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bike, ArrowRight, Sparkles, Zap, Shield, Activity, Users } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Shield, Activity, Users, Bike } from "lucide-react";
 import Link from "next/link";
+import { Navigation } from "@/components/ui/Navigation";
 
 export default function HomePage() {
   return (
@@ -16,37 +17,7 @@ export default function HomePage() {
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b829dd]/10 rounded-full blur-[150px] pointer-events-none" />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[#00f0ff]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <Bike className="w-8 h-8 text-[#00f0ff] group-hover:scale-110 transition-transform" />
-              <span className="text-2xl font-bold gradient-text">ProKolarz</span>
-            </Link>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              {['Treningi', 'Fizjoterapia', 'Galeria', 'Kontakt'].map((item) => (
-                <Link key={item} href={`/${item.toLowerCase()}`} className="text-white/70 hover:text-[#00f0ff] transition-colors">
-                  {item}
-                </Link>
-              ))}
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <Link href="/platnosci">
-                <button className="px-4 py-2 text-[#00f0ff] border border-[#00f0ff]/50 rounded-lg hover:bg-[#00f0ff]/10 transition-all">
-                  Cennik
-                </button>
-              </Link>
-              <Link href="/kontakt">
-                <button className="px-4 py-2 bg-gradient-to-r from-[#00f0ff] to-[#b829dd] text-black font-semibold rounded-lg hover:opacity-90 transition-all">
-                  Kontakt
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">

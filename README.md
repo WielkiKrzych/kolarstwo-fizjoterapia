@@ -9,7 +9,7 @@ Nowoczesny design w stylu Cyberpunk + Liquid Glass.
 ## 🚀 Funkcjonalności
 
 ### Strony
-- ✅ **Strona główna** - Hero z animacjami, statystyki
+- ✅ **Strona główna** - Hero z animacjami, statystyki, pełna nawigacja
 - ✅ **O mnie** - Twój profil, doświadczenie, certyfikaty
 - ✅ **Treningi kolarskie** - Szczegółowa oferta, poziomy zaawansowania
 - ✅ **Fizjoterapia zdalna** - Usługi, jak to działa
