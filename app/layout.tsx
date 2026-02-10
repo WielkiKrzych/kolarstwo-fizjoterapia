@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SocialMediaBar } from "@/components/ui/SocialMediaBar";
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +53,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-[#0a0a0f] font-sans antialiased">
         {children}
+        <SocialMediaBar />
       </body>
     </html>
   );

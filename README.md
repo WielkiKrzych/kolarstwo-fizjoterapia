@@ -8,13 +8,20 @@ Nowoczesny design w stylu Cyberpunk + Liquid Glass.
 
 ## 🚀 Funkcjonalności
 
+### Strony
 - ✅ **Strona główna** - Hero z animacjami, statystyki
+- ✅ **O mnie** - Twój profil, doświadczenie, certyfikaty
 - ✅ **Treningi kolarskie** - Szczegółowa oferta, poziomy zaawansowania
 - ✅ **Fizjoterapia zdalna** - Usługi, jak to działa
-- ✅ **Galeria** - Kategorie z filtrami
+- ✅ **Blog** - Wpisy w Markdown (łatwe dodawanie)
+- ✅ **FAQ** - Najczęściej zadawane pytania (accordion)
 - ✅ **Kontakt** - Formularz z wysyłką maili (Formspree)
 - ✅ **Cennik** - Przejrzyste plany i pakiety
-- ✅ **Kalendarz** - Widok planu zajęć
+
+### Dodatki
+- 📱 **Sticky Social Bar** - Linki do social media (prawa strona)
+- 📧 **Newsletter** - Zapis do mailingu
+- 🎨 **Cyberpunk Design** - Neonowe kolory, glassmorphism, animacje
 
 ## 🛠️ Stos technologiczny
 
@@ -22,6 +29,7 @@ Nowoczesny design w stylu Cyberpunk + Liquid Glass.
 - **Język**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Animacje**: Framer Motion
+- **Blog**: Markdown + gray-matter + remark
 - **Formularz**: Formspree (wysyłka maili bez backendu)
 
 ## 📦 Instalacja i uruchomienie
@@ -39,28 +47,52 @@ cd kolarstwo-fizjoterapia
 npm install
 ```
 
-### 3. Konfiguracja formularza kontaktowego (WAŻNE!)
+### 3. Konfiguracja formularza kontaktowego i newslettera (WAŻNE!)
 
-Formularz używa **Formspree** do wysyłania maili bez backendu:
+Formularze używają **Formspree** do wysyłania maili:
 
 **Krok 1:** Wejdź na [formspree.io](https://formspree.io)
 
 **Krok 2:** Załóż darmowe konto
 
-**Krok 3:** Utwórz nowy formularz i skopiuj endpoint URL (np. `https://formspree.io/f/xnqkvnna`)
+**Krok 3:** Utwórz NOWE formularze:
+- Jeden dla formularza kontaktowego
+- Jeden dla newslettera (opcjonalnie)
 
-**Krok 4:** Otwórz plik `app/kontakt/page.tsx` i zamień:
+**Krok 4:** Skopiuj endpointy URL (np. `https://formspree.io/f/xnqkvnna`)
+
+**Krok 5:** Podmień w kodzie:
+
+W `app/kontakt/page.tsx` (około linia 28):
 ```typescript
-// Znajdź tę linię (około linia 23):
+// Z:
 const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
 
-// Zamień na swój endpoint:
-const response = await fetch("https://formspree.io/f/xnqkvnna", {
+// Na:
+const response = await fetch("https://formspree.io/f/TWOJ_KOD", {
 ```
 
-**Krok 5:** (Opcjonalnie) W Formspree dodaj powiadomienia email, aby dostawać maile na swoją skrzynkę
+W `components/Newsletter.tsx` (około linia 18):
+```typescript
+// To samo dla newslettera (możesz użyć tego samego lub osobnego)
+```
 
-### 4. Uruchomienie lokalne
+**Krok 6:** W Formspree dodaj powiadomienia email
+
+### 4. Konfiguracja social media (opcjonalnie)
+
+W `components/ui/SocialMediaBar.tsx` zmień linki:
+```typescript
+const socialLinks = [
+  { name: "Facebook", url: "https://facebook.com/TWOJ-PROFIL", ... },
+  { name: "Instagram", url: "https://instagram.com/TWOJ-PROFIL", ... },
+  // ...pozostałe
+];
+```
+
+To samo w `app/kontakt/page.tsx` (sekcja "Znajdź mnie w social media")
+
+### 5. Uruchomienie lokalne
 
 ```bash
 npm run dev
@@ -68,28 +100,41 @@ npm run dev
 
 Otwórz [http://localhost:3000](http://localhost:3000)
 
-## 🏗️ Budowa produkcji
+## 📝 Jak dodać wpis na bloga?
 
+To proste! Nie potrzebujesz CMS ani bazy danych.
+
+**Krok 1:** Utwórz nowy plik w folderze `content/blog/`
 ```bash
-npm run build
+content/blog/moj-nowy-wpis.md
 ```
 
-Pliki produkcyjne trafią do folderu `dist/` (lub `.next/`).
+**Krok 2:** Użyj formatu YAML frontmatter:
+```markdown
+---
+title: "Tytuł Twojego wpisu"
+date: "2025-02-15"
+excerpt: "Krótki opis wpisu (pokaże się na liście)"
+tags: ["trening", "poradnik", "kolarstwo"]
+---
 
-## 🌐 Wdrożenie
+# Treść wpisu
 
-### Vercel (najprostsze)
+Tu piszesz treść w **Markdown**.
 
-```bash
-npm install -g vercel
-vercel
+- Listy
+- [Linki](https://example.com)
+- *Kursywa*
+- **Pogrubienie**
+
+## Nagłówki działają też
+
+I tak dalej...
 ```
 
-### Inne opcje
-- **Netlify** - Połącz z GitHub repo
-- **GitHub Pages** - Dla statycznej wersji
+**Krok 3:** Zapisz plik i zrób deploy - wpis pojawi się automatycznie!
 
-## 📝 Personalizacja treści
+## 🎨 Personalizacja treści
 
 ### Zmiana tekstów
 
@@ -98,22 +143,51 @@ Wszystkie teksty znajdują się w plikach w folderze `app/`:
 | Plik | Zawartość |
 |------|-----------|
 | `app/page.tsx` | Strona główna |
+| `app/o-mnie/page.tsx` | O mnie - **TU WPISZ SWOJE DANE** |
 | `app/treningi/page.tsx` | Oferta treningów |
 | `app/fizjoterapia/page.tsx` | Oferta fizjoterapii |
-| `app/platnosci/page.tsx` | Cennik |
-| `app/kontakt/page.tsx` | Formularz kontaktowy |
+| `app/faq/page.tsx` | FAQ - **TU ZMIEŃ PYTANIA** |
+| `app/blog/page.tsx` | Lista wpisów bloga |
+| `app/kontakt/page.tsx` | Formularz + dane kontaktowe |
 
-### Zmiana danych kontaktowych
+### Zmiana danych w "O mnie"
 
-W `app/kontakt/page.tsx` (linie 45-67) zmień:
-- Email
-- Telefon
-- Godziny pracy
+Otwórz `app/o-mnie/page.tsx` i zmień:
+- `[Twoje Imię]` - na swoje imię/nazwisko
+- `[Twoje Miasto]` - na swoją lokalizację
+- Teksty opisu - na swoją historię
+- Certyfikaty - na swoje kwalifikacje
+- Stats - swoje statystyki (opcjonalnie)
+
+### Zmiana FAQ
+
+Otwórz `app/faq/page.tsx` i edytuj tablicę `faqData`:
+```typescript
+const faqData = [
+  {
+    question: "Twoje pytanie?",
+    answer: "Twoja odpowiedź...",
+    category: "Kategoria"
+  },
+  // Dodaj więcej...
+];
+```
+
+### Dodanie zdjęcia w "O mnie"
+
+1. Dodaj zdjęcie do folderu `public/images/`
+2. W `app/o-mnie/page.tsx` zamień:
+```tsx
+// Z:
+<div className="text-8xl mb-4">👤</div>
+
+// Na:
+<img src="/images/twoje-zdjecie.jpg" alt="Twoje Imię" className="w-full h-full object-cover" />
+```
 
 ### Zmiana kolorów
 
 W `app/globals.css` możesz zmienić kolory neonowe:
-
 ```css
 --neon-cyan: #00f0ff;     /* Główny kolor akcentu */
 --neon-pink: #ff00ff;     /* Drugi kolor */
@@ -124,76 +198,80 @@ W `app/globals.css` możesz zmienić kolory neonowe:
 
 ```
 kolarstwo-fizjoterapia/
-├── app/                      # Strony Next.js
-│   ├── page.tsx             # Strona główna
-│   ├── treningi/            # Oferta treningów
-│   ├── fizjoterapia/        # Oferta fizjoterapii
-│   ├── galeria/             # Galeria
-│   ├── platnosci/           # Cennik
-│   ├── kontakt/             # Formularz kontaktowy
-│   ├── kalendarz/           # Plan zajęć
-│   ├── layout.tsx           # Layout główny
-│   └── globals.css          # Style + Cyberpunk theme
+├── app/                          # Strony Next.js
+│   ├── page.tsx                 # Strona główna
+│   ├── o-mnie/                  # O mnie
+│   ├── treningi/                # Treningi
+│   ├── fizjoterapia/            # Fizjoterapia
+│   ├── blog/                    # Blog
+│   │   ├── page.tsx            # Lista wpisów
+│   │   └── [slug]/             # Pojedynczy wpis
+│   ├── faq/                     # FAQ
+│   ├── kontakt/                 # Kontakt
+│   ├── platnosci/               # Cennik
+│   ├── kalendarz/               # Kalendarz
+│   ├── layout.tsx              # Layout główny
+│   └── globals.css             # Style
 ├── components/
-│   └── ui/                  # Komponenty UI
-│       ├── Navigation.tsx   # Nawigacja
-│       ├── Button.tsx       # Przyciski
-│       └── ...
-└── public/                  # Obrazy i zasoby
+│   ├── ui/                      # Komponenty UI
+│   │   ├── Navigation.tsx      # Nawigacja
+│   │   ├── SocialMediaBar.tsx  # Pasek social (prawy)
+│   │   └── ...
+│   └── Newsletter.tsx          # Sekcja newslettera
+├── content/
+│   └── blog/                    # Wpisy bloga (.md)
+├── lib/
+│   ├── blog.ts                 # Funkcje bloga
+│   └── utils.ts                # Utility
+└── public/                      # Zasoby statyczne
+    └── images/                  # Zdjęcia
 ```
 
-## ⚠️ Ważne uwagi
+## 🌐 Wdrożenie
 
-1. **Formularz kontaktowy** - Wymaga konfiguracji Formspree (patrz sekcja "Konfiguracja formularza")
+### Vercel (najprostsze)
 
-2. **Brak backendu** - To strona statyczna, nie wymaga bazy danych ani serwera backend
+```bash
+npm install -g vercel
+vercel
+```
 
-3. **Galeria** - Używa emoji jako placeholderów. Dodaj prawdziwe zdjęcia w folderze `public/images/`
+### Netlify
 
-4. **Kalendarz** - Jest to widok statyczny (mockup). Nie podłączony do żadnego systemu rezerwacji.
-
-## 🎨 Design System
-
-### Kolory neonowe
-- **Cyan** `#00f0ff` - Główny akcent
-- **Pink** `#ff00ff` - Drugi akcent
-- **Purple** `#b829dd` - Trzeci akcent
-- **Green** `#00ff88` - Sukces/pozytywne
-
-### Efekty
-- **Glassmorphism** - Półprzezroczyste tła z blur
-- **Gradient text** - Wielokolorowe nagłówki
-- **Glow effects** - Neonowe cienie
-- **Floating orbs** - Unoszące się kule w tle
+Połącz repozytorium z GitHub w panelu Netlify.
 
 ## 🐛 Rozwiązywanie problemów
 
 ### Formularz nie wysyła maili
-- Sprawdź czy podałeś poprawny URL Formspree w `app/kontakt/page.tsx`
+- Sprawdź czy podałeś poprawny URL Formspree
 - Sprawdź czy masz połączenie z internetem
-- Sprawdź konsolę przeglądarki (F12 → Console) na błędy
+- Sprawdź konsolę przeglądarki (F12 → Console)
+
+### Blog nie wyświetla wpisów
+- Upewnij się, że pliki są w `content/blog/`
+- Sprawdź czy mają rozszerzenie `.md`
+- Sprawdź czy frontmatter ma poprawny format (--- na początku i końcu)
 
 ### Port 3000 zajęty
 ```bash
 npm run dev -- -p 3001
 ```
 
-### Błędy instalacji
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
-## 📋 TODO
+## 📋 TODO - Co jeszcze możesz dodać
 
 - [x] Design Cyberpunk + Liquid Glass
 - [x] Strona główna
 - [x] Podstrony oferty
 - [x] Formularz kontaktowy (Formspree)
-- [x] Cennik
-- [ ] Dodać prawdziwe zdjęcia do galerii
-- [ ] Dodać prawdziwe treści (teksty o treningach)
-- [ ] Skonfigurować własny email w Formspree
+- [x] Blog z Markdown
+- [x] FAQ
+- [x] Strona "O mnie"
+- [x] Social media links
+- [x] Newsletter
+- [ ] Prawdziwe zdjęcia do galerii
+- [ ] Prawdziwe treści (teksty o treningach)
+- [ ] Podłączyć własne konta social media
+- [ ] Skonfigurować Formspree
 - [ ] Wdrożyć na produkcję
 
 ## 📝 Licencja

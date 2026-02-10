@@ -10,10 +10,11 @@ export function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Strona główna" },
+    { href: "/o-mnie", label: "O mnie" },
     { href: "/treningi", label: "Treningi" },
     { href: "/fizjoterapia", label: "Fizjoterapia" },
-    { href: "/galeria", label: "Galeria" },
-    { href: "/platnosci", label: "Cennik" },
+    { href: "/blog", label: "Blog" },
+    { href: "/faq", label: "FAQ" },
     { href: "/kontakt", label: "Kontakt" },
   ];
 

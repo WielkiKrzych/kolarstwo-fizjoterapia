@@ -100,3 +100,77 @@ body {
   background: linear-gradient(180deg, #00f0ff, #b829dd);
   border-radius: 4px;
 }
+
+/* Prose (Blog Content) */
+.prose {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: white;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.prose h1 {
+  font-size: 2.25em;
+  background: linear-gradient(135deg, #00f0ff 0%, #b829dd 50%, #ff00ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.prose h2 {
+  font-size: 1.75em;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  padding-bottom: 0.3em;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+  line-height: 1.8;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.prose strong {
+  color: #00f0ff;
+  font-weight: 600;
+}
+
+.prose a {
+  color: #00f0ff;
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose blockquote {
+  border-left: 4px solid #00f0ff;
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.prose code {
+  background: rgba(0, 240, 255, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #00f0ff;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid rgba(0, 240, 255, 0.2);
+  margin: 2em 0;
+}
