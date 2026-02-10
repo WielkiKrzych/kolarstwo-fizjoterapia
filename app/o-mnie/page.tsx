@@ -6,9 +6,9 @@ import { Bike, Award, Users, Heart, ArrowRight, Calendar, MapPin } from "lucide-
 import Link from "next/link";
 
 const stats = [
-  { value: "10+", label: "Lat doświadczenia", icon: Calendar },
-  { value: "500+", label: "Przeprowadzonych treningów", icon: Users },
-  { value: "50+", label: "Zadowolonych klientów", icon: Heart },
+  { value: "8+", label: "Lat doświadczenia", icon: Calendar },
+  { value: "40+", label: "Zawodników", icon: Users },
+  { value: "3000+", label: "Pacjentów", icon: Heart },
   { value: "15", label: "Certyfikatów", icon: Award },
 ];
 
@@ -44,16 +44,18 @@ export default function AboutPage() {
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="text-white">Cześć, jestem{" "}</span>
-                <span className="gradient-text glow-text">[Twoje Imię]</span>
+                <span className="gradient-text glow-text">Krzysztof</span>
               </h1>
               
+              <p className="text-lg text-white/50 mb-2">WielkiKrzych</p>
+              
               <p className="text-xl text-white/60 mb-6">
-                Trener kolarski & Fizjoterapeuta
+                Fizjoterapeuta & Trener Kolarstwa i Biegania & Trener Przygotowania Motorycznego
               </p>
 
               <div className="flex items-center space-x-2 text-white/50 mb-8">
                 <MapPin className="w-5 h-5" />
-                <span>Cała Polska (online) / [Twoje Miasto]</span>
+                <span>Cała Polska (online) / Warszawa i Pruszków</span>
               </div>
 
               <Link href="/kontakt">

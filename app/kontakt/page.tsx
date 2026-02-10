@@ -84,7 +84,7 @@ export default function ContactPage() {
       icon: MapPin,
       title: "Lokalizacja",
       value: "Online - Cała Polska",
-      value2: "Stacjonarnie - Warszawa, Pruszków",
+      value2: "Stacjonarnie - Warszawa i Pruszków",
       link: null,
       color: "#00ff88",
     },
