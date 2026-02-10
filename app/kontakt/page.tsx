@@ -164,7 +164,7 @@ export default function ContactPage() {
                         ) : (
                           <div className="text-white/60">
                             <p>{info.value}</p>
-                            {'value2' in info && info.value2 && <p>{info.value2}</p>}
+                            {(info as {value: string; value2?: string}).value2 && <p>{(info as {value: string; value2?: string}).value2}</p>}
                           </div>
                         )}
                       </div>
