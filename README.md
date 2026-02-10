@@ -1,6 +1,7 @@
 # ProKolarz - Treningi Kolarskie & Fizjoterapia Zdalna
 
-Profesjonalna strona internetowa z ofertą treningów kolarskich i fizjoterapii zdalnej. Nowoczesny design w stylu Cyberpunk + Liquid Glass z pełnym backendem, systemem autoryzacji i panelem administracyjnym.
+Profesjonalna strona wizytówka z ofertą treningów kolarskich i fizjoterapii zdalnej. 
+Nowoczesny design w stylu Cyberpunk + Liquid Glass.
 
 ![Cyberpunk Design](https://img.shields.io/badge/Design-Cyberpunk%20+%20Liquid%20Glass-cyan)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black)
@@ -8,26 +9,13 @@ Profesjonalna strona internetowa z ofertą treningów kolarskich i fizjoterapii 
 
 ## 🚀 Funkcjonalności
 
-### Frontend
 - ✅ **Strona główna** - Hero z animacjami, statystyki, funkcje
 - ✅ **Treningi kolarskie** - Szczegółowa oferta, poziomy zaawansowania
-- ✅ **Fizjoterapia zdalna** - Usługi, jak to działa, CTA
+- ✅ **Fizjoterapia zdalna** - Usługi, jak to działa
 - ✅ **Galeria** - Kategorie z filtrami, hover effects
-- ✅ **Kontakt** - Formularz z walidacją, godziny pracy
-- ✅ **Kalendarz** - Interaktywny widok wydarzeń z kolorowymi eventami
-- ✅ **System płatności** - Integracja ze Stripe (UI + webhook)
-
-### Autoryzacja
-- ✅ **Logowanie** - Credentials, Google OAuth, Facebook OAuth
-- ✅ **Rejestracja** - Walidacja, potwierdzenia email
-- ✅ **Ochrona tras** - Middleware dla stron chronionych
-
-### Panel Administracyjny (CRUD)
-- ✅ **Dashboard** - Statystyki i podsumowanie
-- ✅ **Użytkownicy** - Zarządzanie kontami
-- ✅ **Usługi** - Zarządzanie ofertą
-- ✅ **Rezerwacje** - System bookingów
-- ✅ **Wiadomości** - Skrzynka odbiorcza kontaktu
+- ✅ **Kontakt** - Formularz kontaktowy (wysyła maila)
+- ✅ **Cennik** - Przejrzyste plany i pakiety
+- ✅ **Kalendarz** - Interaktywny widok (mockup)
 
 ### Design System - Cyberpunk + Liquid Glass
 - 🎨 **Ciemne tło** `#0a0a0f` z neonowymi akcentami
@@ -40,30 +28,17 @@ Profesjonalna strona internetowa z ofertą treningów kolarskich i fizjoterapii 
 
 ## 🛠️ Stos technologiczny
 
-### Frontend
 - **Framework**: Next.js 16 (App Router, Turbopack)
 - **Język**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Animacje**: Framer Motion
 - **Ikony**: Lucide React
-- **Komponenty UI**: shadcn/ui
-
-### Backend
-- **API**: Next.js API Routes
-- **Baza danych**: Prisma ORM (schema gotowe)
-- **Autoryzacja**: NextAuth.js v4
-- **Płatności**: Stripe (payments + webhooks)
-- **Email**: Resend API
-
-### DevOps
-- **Pakietowanie**: npm
-- **Kontrola wersji**: Git + GitHub
 
 ## 📦 Instalacja
 
 ### Wymagania
 - Node.js 18+ 
-- npm lub yarn
+- npm
 
 ### Szybki start
 
@@ -75,39 +50,10 @@ cd kolarstwo-fizjoterapia
 # 2. Zainstaluj zależności
 npm install
 
-# 3. Skonfiguruj zmienne środowiskowe
-cp .env.example .env.local
-# Edytuj .env.local i dodaj swoje klucze API
-
-# 4. Uruchom serwer deweloperski
+# 3. Uruchom serwer deweloperski
 npm run dev
 
 # Gotowe! Otwórz http://localhost:3000
-```
-
-### Zmienne środowiskowe (.env.local)
-
-```env
-# NextAuth.js
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your-secret-key-here
-
-# OAuth Providers
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-FACEBOOK_CLIENT_ID=your-facebook-app-id
-FACEBOOK_CLIENT_SECRET=your-facebook-app-secret
-
-# Database (Prisma)
-DATABASE_URL="postgresql://user:password@localhost:5432/prokolarz"
-
-# Stripe
-STRIPE_SECRET_KEY=sk_test_...
-STRIPE_PUBLISHABLE_KEY=pk_test_...
-STRIPE_WEBHOOK_SECRET=whsec_...
-
-# Email (Resend)
-RESEND_API_KEY=re_...
 ```
 
 ## 🏗️ Budowa produkcji
@@ -130,40 +76,21 @@ kolarstwo-fizjoterapia/
 │   ├── fizjoterapia/            # Fizjoterapia zdalna
 │   ├── galeria/                 # Galeria z filtrami
 │   ├── kontakt/                 # Formularz kontaktowy
-│   ├── kalendarz/               # Kalendarz wydarzeń
-│   ├── platnosci/               # System płatności Stripe
-│   ├── login/                   # Logowanie (Cyberpunk)
-│   ├── register/                # Rejestracja (Cyberpunk)
-│   ├── (admin)/                 # Panel administracyjny
-│   │   ├── dashboard/           # Dashboard statystyk
-│   │   ├── uzytkownicy/         # Zarządzanie użytkownikami
-│   │   ├── uslugi/              # Zarządzanie usługami
-│   │   ├── rezerwacje/          # System rezerwacji
-│   │   └── wiadomosci/          # Wiadomości kontaktowe
-│   ├── (auth)/                  # Grupa autoryzacji
+│   ├── kalendarz/               # Kalendarz (mockup)
+│   ├── platnosci/               # Cennik
 │   ├── api/                     # API Routes
-│   │   ├── auth/[...nextauth]  # NextAuth.js
-│   │   ├── auth/register       # Rejestracja
-│   │   ├── bookings            # Rezerwacje
-│   │   ├── contact             # Formularz kontaktu
-│   │   └── payments/           # Stripe payments
+│   │   └── contact/             # Tylko formularz kontaktowy
 │   ├── layout.tsx              # Główny layout
 │   └── globals.css             # Globalne style + Cyberpunk theme
 ├── components/
-│   ├── ui/                      # Komponenty UI (shadcn)
+│   ├── ui/                      # Komponenty UI
 │   │   ├── Button.tsx
 │   │   ├── Card.tsx
-│   │   ├── Modal.tsx
 │   │   ├── Navigation.tsx
 │   │   └── ...
-│   └── analytics.tsx            # Google Analytics
+│   └── analytics.tsx            # Google Analytics (opcjonalnie)
 ├── lib/
-│   ├── auth.ts                  # NextAuth config
-│   ├── prisma.ts               # Prisma client
 │   └── utils.ts                # Utility functions
-├── prisma/
-│   └── schema.prisma           # Schema bazy danych
-├── middleware.ts               # Ochrona tras
 └── public/                     # Zasoby statyczne
 ```
 
@@ -215,20 +142,31 @@ npm install -g vercel
 vercel
 ```
 
-### Wymagane zmienne środowiskowe na Vercel:
-- Wszystkie zmienne z `.env.local`
-- Skonfiguruj domenę dla OAuth (Google/Facebook)
-- Ustaw webhook URL dla Stripe
+### Inne opcje
+- **Netlify** - Drag & drop folderu `dist`
+- **GitHub Pages** - Dla statycznych stron
 
-## 🧪 Testowanie
+## 📝 Personalizacja
 
-### Test credentials (development)
-- **Admin**: `admin@prokolarz.pl` / `admin123`
-- **User**: `user@example.com` / `password123`
+### Zmiana treści
 
-### Stripe test cards
-- **Success**: `4242 4242 4242 4242`
-- **Decline**: `4000 0000 0000 0002`
+Wszystkie teksty znajdują się bezpośrednio w plikach `.tsx` w folderze `app/`:
+
+- `app/page.tsx` - Strona główna
+- `app/treningi/page.tsx` - Oferta treningów
+- `app/fizjoterapia/page.tsx` - Oferta fizjoterapii
+- `app/platnosci/page.tsx` - Cennik
+- `app/kontakt/page.tsx` - Dane kontaktowe
+
+### Zmiana kolorów
+
+W `app/globals.css` możesz zmienić kolory neonowe:
+
+```css
+--neon-cyan: #00f0ff;     /* Zmień na wybrany kolor */
+--neon-pink: #ff00ff;
+--neon-purple: #b829dd;
+```
 
 ## 🐛 Rozwiązywanie problemów
 
@@ -245,26 +183,17 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
-### Problem z NextAuth
-Upewnij się, że `NEXTAUTH_SECRET` jest ustawiony (min. 32 znaki):
-```bash
-openssl rand -base64 32
-```
+## 📋 TODO
 
-## 📋 TODO / Przyszłe ulepszenia
-
-- [x] Backend API (Next.js API Routes)
-- [x] Schema bazy danych (Prisma)
-- [x] Autoryzacja (NextAuth.js)
-- [x] Panel administracyjny (CRUD)
 - [x] Design Cyberpunk + Liquid Glass
-- [ ] Podłączenie prawdziwej bazy PostgreSQL
-- [ ] Konfiguracja produkcyjnych kluczy OAuth
-- [ ] Konfiguracja produkcyjnego Stripe
-- [ ] System powiadomień email (Resend)
-- [ ] Integracja z kalendarzem Google/Apple
-- [ ] Aplikacja mobilna (PWA)
-- [ ] Dodanie prawdziwych treści i zdjęć
+- [x] Strona główna
+- [x] Podstrony oferty
+- [x] Formularz kontaktowy
+- [x] Cennik
+- [ ] Dodać prawdziwe treści (teksty)
+- [ ] Dodać prawdziwe zdjęcia
+- [ ] Skonfigurować wysyłkę maili (EmailJS/Resend)
+- [ ] Wdrożyć na produkcję
 
 ## 📝 Licencja
 

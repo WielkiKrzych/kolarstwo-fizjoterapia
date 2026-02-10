@@ -2,292 +2,270 @@
 
 import { Navigation } from "@/components/ui/Navigation";
 import { motion } from "framer-motion";
-import { CreditCard, Lock, Check } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";
-import { useState } from "react";
+import { Check, ArrowRight, Star, Zap, Trophy } from "lucide-react";
 import Link from "next/link";
 
-export default function PaymentsPage() {
-  const [formData, setFormData] = useState({
-    cardNumber: "",
-    cardName: "",
-    expiry: "",
-    cvv: "",
-  });
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsProcessing(true);
-
-    // Simulate payment processing
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    setIsProcessing(false);
-    setIsSuccess(true);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const formatCardNumber = (value: string) => {
-    return value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim();
-  };
-
-  const selectedPlan = {
+const pricingPlans = [
+  {
+    name: "STARTER",
+    price: "299",
+    period: "zł/miesiąc",
+    description: "Idealny dla początkujących kolarzy",
+    icon: Star,
+    color: "#00f0ff",
+    features: [
+      "Indywidualny plan treningowy",
+      "4 treningi tygodniowo",
+      "Podstawowa analiza wyników",
+      "Wsparcie email",
+      "Dostęp do materiałów edukacyjnych",
+    ],
+    popular: false,
+  },
+  {
     name: "PRO",
-    price: "599 zł",
+    price: "599",
+    period: "zł/miesiąc",
     description: "Dla zaawansowanych kolarzy",
-  };
+    icon: Zap,
+    color: "#b829dd",
+    features: [
+      "Wszystko z planu Starter",
+      "6 treningów tygodniowo",
+      "Zaawansowana analiza wyników",
+      "Konsultacja wideo 2x miesiąc",
+      "Plan żywieniowy",
+      "Priorytetowe wsparcie",
+    ],
+    popular: true,
+  },
+  {
+    name: "ELITE",
+    price: "999",
+    period: "zł/miesiąc",
+    description: "Dla zawodowców i ambitnych",
+    icon: Trophy,
+    color: "#ff00ff",
+    features: [
+      "Wszystko z planu Pro",
+      "Treningi 7 dni w tygodniu",
+      "Analiza w czasie rzeczywistym",
+      "Nielimitowane konsultacje",
+      "Personalizowany plan żywieniowy",
+      "Fizjoterapia w pakiecie",
+      "24/7 wsparcie",
+    ],
+    popular: false,
+  },
+];
 
+const therapyPricing = [
+  {
+    name: "Konsultacja Online",
+    price: "150 zł",
+    duration: "45 minut",
+    description: "Pierwsza konsultacja fizjoterapeutyczna przez video",
+  },
+  {
+    name: "Pakiet 5 Konsultacji",
+    price: "650 zł",
+    duration: "5 x 45 minut",
+    description: "Oszczędzasz 100 zł",
+  },
+  {
+    name: "Plan Rehabilitacyjny",
+    price: "400 zł",
+    duration: "Miesiąc",
+    description: "Indywidualny plan ćwiczeń + 2 konsultacje",
+  },
+];
+
+export default function CennikPage() {
   return (
-    <main>
+    <main className="min-h-screen bg-[#0a0a0f]">
       <Navigation />
 
-      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-accent-50 pt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Header */}
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-[#00f0ff]/20 rounded-full blur-[100px] animate-float pointer-events-none" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#b829dd]/20 rounded-full blur-[120px] animate-float pointer-events-none" style={{animationDelay: '2s'}} />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center"
           >
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
-              Płatność bezpieczna
+            <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full mb-8">
+              <Star className="w-4 h-4 text-[#00f0ff]" />
+              <span className="text-sm text-white/80">Przejrzysty cennik</span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+              <span className="text-white">Wybierz swój{" "}</span>
+              <span className="gradient-text glow-text">plan</span>
             </h1>
-            <p className="text-xl text-gray-600">
-              Dokończ zamówienie w kilku prostych krokach
+            
+            <p className="text-xl text-white/60 max-w-3xl mx-auto">
+              Elastyczne plany dopasowane do Twoich potrzeb i celów. 
+              Skontaktuj się ze mną, aby rozpocząć współpracę.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing Plans */}
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {pricingPlans.map((plan, index) => {
+              const Icon = plan.icon;
+              return (
+                <motion.div
+                  key={plan.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={`glass-card rounded-2xl p-8 relative ${plan.popular ? 'border-2' : ''}`}
+                  style={{ borderColor: plan.popular ? plan.color : undefined }}
+                >
+                  {plan.popular && (
+                    <div 
+                      className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 rounded-full text-sm font-bold text-black"
+                      style={{ background: plan.color }}
+                    >
+                      Najpopularniejszy
+                    </div>
+                  )}
+                  
+                  <div className="text-center mb-8">
+                    <div 
+                      className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4"
+                      style={{ background: `${plan.color}20`, border: `1px solid ${plan.color}40` }}
+                    >
+                      <Icon className="w-8 h-8" style={{ color: plan.color }} />
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                    <p className="text-white/50 mb-4">{plan.description}</p>
+                    
+                    <div className="flex items-baseline justify-center">
+                      <span className="text-5xl font-bold gradient-text">{plan.price}</span>
+                      <span className="text-white/50 ml-2">{plan.period}</span>
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <Check className="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" style={{ color: plan.color }} />
+                        <span className="text-white/70">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Link href="/kontakt">
+                    <button 
+                      className={`w-full py-4 rounded-xl font-bold transition-all flex items-center justify-center space-x-2 group ${
+                        plan.popular 
+                          ? 'bg-gradient-to-r from-[#00f0ff] to-[#b829dd] text-black hover:scale-105' 
+                          : 'glass text-white hover:bg-white/10'
+                      }`}
+                    >
+                      <span>Wybierz plan</span>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Therapy Pricing */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#ff00ff]/5 to-transparent pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-white">Fizjoterapia{" "}</span>
+              <span className="gradient-text">Zdalna</span>
+            </h2>
+            <p className="text-xl text-white/60">
+              Profesjonalna pomoc bez wychodzenia z domu
             </p>
           </motion.div>
 
-          {!isSuccess ? (
-            <div className="grid lg:grid-cols-3 gap-8">
-              {/* Payment Form */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {therapyPricing.map((item, index) => (
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                className="lg:col-span-2"
+                key={item.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="glass-card rounded-2xl p-8 text-center"
               >
-                <Card>
-                  <CardHeader>
-                    <div className="flex items-center space-x-2">
-                      <CreditCard className="w-6 h-6 text-primary-600" />
-                      <CardTitle>Dane płatności</CardTitle>
-                    </div>
-                    <CardDescription>
-                      Wypełnij formularz, aby zakończyć płatność
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div>
-                        <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-700 mb-2">
-                          Numer karty *
-                        </label>
-                        <input
-                          type="text"
-                          id="cardNumber"
-                          name="cardNumber"
-                          required
-                          value={formData.cardNumber}
-                          onChange={(e) => {
-                            const value = e.target.value.replace(/\s/g, '').slice(0, 16);
-                            setFormData({ ...formData, cardNumber: formatCardNumber(value) });
-                          }}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                          placeholder="1234 5678 9012 3456"
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="cardName" className="block text-sm font-medium text-gray-700 mb-2">
-                          Imię i nazwisko na karcie *
-                        </label>
-                        <input
-                          type="text"
-                          id="cardName"
-                          name="cardName"
-                          required
-                          value={formData.cardName}
-                          onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                          placeholder="JAN KOWALSKI"
-                        />
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <label htmlFor="expiry" className="block text-sm font-medium text-gray-700 mb-2">
-                            Data ważności *
-                          </label>
-                          <input
-                            type="text"
-                            id="expiry"
-                            name="expiry"
-                            required
-                            value={formData.expiry}
-                            onChange={(e) => {
-                              const value = e.target.value.replace(/\D/g, '').slice(0, 4);
-                              if (value.length >= 3) {
-                                setFormData({ ...formData, expiry: value.slice(0, 2) + '/' + value.slice(2, 4) });
-                              } else {
-                                setFormData({ ...formData, expiry: value });
-                              }
-                            }}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                            placeholder="MM/YY"
-                          />
-                        </div>
-
-                        <div>
-                          <label htmlFor="cvv" className="block text-sm font-medium text-gray-700 mb-2">
-                            Kod CVV *
-                          </label>
-                          <input
-                            type="password"
-                            id="cvv"
-                            name="cvv"
-                            required
-                            value={formData.cvv}
-                            onChange={(e) => {
-                              const value = e.target.value.replace(/\D/g, '').slice(0, 3);
-                              setFormData({ ...formData, cvv: value });
-                            }}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                            placeholder="•••"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="bg-gray-50 p-4 rounded-lg flex items-start space-x-3">
-                        <Lock className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
-                        <div className="text-sm text-gray-600">
-                          Twoje dane są bezpieczne. Używamy szyfrowania SSL i zgodności z PCI DTS, 
-                          aby zapewnić bezpieczeństwo Twoich informacji.
-                        </div>
-                      </div>
-
-                      <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full"
-                        disabled={isProcessing}
-                      >
-                        {isProcessing ? (
-                          "Przetwarzanie..."
-                        ) : (
-                          `Zapłać ${selectedPlan.price}`
-                        )}
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
+                <h3 className="text-xl font-bold text-white mb-2">{item.name}</h3>
+                <p className="text-white/50 mb-4">{item.description}</p>
+                
+                <div className="text-4xl font-bold gradient-text mb-2">
+                  {item.price}
+                </div>
+                
+                <p className="text-white/50 text-sm mb-6">{item.duration}</p>
+                
+                <Link href="/kontakt">
+                  <button className="w-full py-3 glass rounded-xl text-white hover:bg-white/10 transition-all">
+                    Umów wizytę
+                  </button>
+                </Link>
               </motion.div>
-
-              {/* Order Summary */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Podsumowanie zamówienia</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="pb-4 border-b border-gray-200">
-                        <h3 className="font-semibold text-gray-900 mb-1">{selectedPlan.name}</h3>
-                        <p className="text-sm text-gray-600">{selectedPlan.description}</p>
-                      </div>
-
-                      <div className="space-y-3">
-                        <div className="flex justify-between text-gray-600">
-                          <span>Plan miesięczny</span>
-                          <span>{selectedPlan.price}</span>
-                        </div>
-                        <div className="flex justify-between text-gray-600">
-                          <span>VAT (23%)</span>
-                          <span>W cenie</span>
-                        </div>
-                      </div>
-
-                      <div className="pt-4 border-t border-gray-200">
-                        <div className="flex justify-between items-center">
-                          <span className="font-semibold text-gray-900">Suma</span>
-                          <span className="text-2xl font-bold text-primary-600">{selectedPlan.price}</span>
-                        </div>
-                      </div>
-
-                      <div className="pt-4">
-                        <h4 className="font-semibold text-gray-900 mb-3">Zawiera:</h4>
-                        <ul className="space-y-2">
-                          {['Indywidualny plan treningowy', '6 treningów tygodniowo', 'Analiza wyników', 'Konsultacja wideo', 'Plan żywieniowy'].map((item, index) => (
-                            <li key={index} className="flex items-start">
-                              <Check className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm text-gray-600">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="pt-4">
-                        <Link href="/kontakt">
-                          <Button variant="outline" className="w-full">
-                            Masz pytania? Skontaktuj się
-                          </Button>
-                        </Link>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          ) : (
-            /* Success State */
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-2xl mx-auto"
-            >
-              <Card>
-                <CardContent className="pt-12 pb-12 text-center">
-                  <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Check className="w-12 h-12 text-green-600" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    Płatność zakończona pomyślnie!
-                  </h2>
-                  <p className="text-lg text-gray-600 mb-8">
-                    Dziękujemy za zakup! Wkrótce otrzymasz email z potwierdzeniem i dalszymi instrukcjami.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link href="/kalendarz">
-                      <Button size="lg">
-                        Przejdź do kalendarza
-                      </Button>
-                    </Link>
-                    <Link href="/">
-                      <Button size="lg" variant="outline">
-                        Strona główna
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          )}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00f0ff]/10 via-[#b829dd]/10 to-[#ff00ff]/10 pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="glass-card rounded-3xl p-12"
+          >
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Masz pytania?{" "}
+              <span className="gradient-text">Napisz do mnie!</span>
+            </h2>
+            <p className="text-xl text-white/60 mb-8">
+              Chętnie odpowiem na wszystkie pytania i pomogę wybrać odpowiedni plan
+            </p>
+            
+            <Link href="/kontakt">
+              <button className="group px-8 py-4 bg-gradient-to-r from-[#00f0ff] to-[#b829dd] text-black font-bold rounded-xl hover:scale-105 transition-all flex items-center space-x-2 mx-auto">
+                <span>Skontaktuj się</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 }

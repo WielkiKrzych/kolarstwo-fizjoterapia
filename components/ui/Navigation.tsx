@@ -4,74 +4,57 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Bike, Activity } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Strona główna" },
-    { href: "/treningi", label: "Treningi kolarskie" },
+    { href: "/treningi", label: "Treningi" },
     { href: "/fizjoterapia", label: "Fizjoterapia" },
     { href: "/galeria", label: "Galeria" },
+    { href: "/platnosci", label: "Cennik" },
     { href: "/kontakt", label: "Kontakt" },
   ];
 
-  const authLinks = [
-    { href: "/login", label: "Zaloguj" },
-    { href: "/kalendarz", label: "Kalendarz" },
-  ];
-
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[#00f0ff]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="flex items-center space-x-1">
-              <Bike className="w-8 h-8 text-primary-600" />
-              <Activity className="w-8 h-8 text-accent-600" />
+              <Bike className="w-8 h-8 text-[#00f0ff] group-hover:scale-110 transition-transform" />
+              <Activity className="w-8 h-8 text-[#ff00ff]" />
             </div>
-            <span className="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+            <span className="text-xl font-bold gradient-text">
               ProKolarz
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                className="px-3 py-2 text-white/70 hover:text-[#00f0ff] font-medium transition-colors rounded-lg hover:bg-white/5"
               >
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center space-x-4 ml-4">
-              {authLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "px-4 py-2 rounded-lg font-medium transition-colors",
-                    link.href === "/login"
-                      ? "text-gray-700 hover:bg-gray-100"
-                      : "bg-primary-600 text-white hover:bg-primary-700"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <Menu className="w-6 h-6 text-white" />
+            )}
           </button>
         </div>
       </div>
@@ -84,36 +67,19 @@ export function Navigation() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-gray-200 bg-white"
+            className="md:hidden glass border-t border-[#00f0ff]/10"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors"
+                  className="block py-3 px-3 text-white/70 hover:text-[#00f0ff] font-medium transition-colors rounded-lg hover:bg-white/5"
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-gray-200 space-y-3">
-                {authLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "block px-4 py-2 rounded-lg font-medium transition-colors text-center",
-                      link.href === "/login"
-                        ? "text-gray-700 hover:bg-gray-100"
-                        : "bg-primary-600 text-white hover:bg-primary-700"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
             </div>
           </motion.div>
         )}
