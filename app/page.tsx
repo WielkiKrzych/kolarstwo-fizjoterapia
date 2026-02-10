@@ -35,7 +35,7 @@ export default function HomePage() {
 
             <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto mb-12">
               Profesjonalne treningi kolarskie i fizjoterapia zdalna. 
-              Osiągnij swoje cele z pomocą AI i ekspertów.
+              Osiągnij swoje cele z pomocą doświadczonego trenera i fizjoterapeuty.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -56,9 +56,9 @@ export default function HomePage() {
           {/* Stats */}
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "500+", label: "Klientów" },
-              { value: "10+", label: "Lat doświadczenia" },
-              { value: "95%", label: "Skuteczność" },
+              { value: "40+", label: "Zawodników" },
+              { value: "3000+", label: "Pacjentów" },
+              { value: "8+", label: "Lat doświadczenia" },
               { value: "24/7", label: "Wsparcie" },
             ].map((stat) => (
               <div key={stat.label} className="glass-card rounded-2xl p-6">
@@ -75,18 +75,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-white">Dlaczego </span>
-              <span className="gradient-text">ProKolarz?</span>
+              <span className="text-white">Dlaczego warto </span>
+              <span className="gradient-text">ze mną współpracować?</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Zap, title: "AI-Powered Treningi", desc: "Spersonalizowane plany treningowe generowane przez AI", color: "#00f0ff" },
-              { icon: Shield, title: "Fizjoterapia Online", desc: "Profesjonalna rehabilitacja zdalna", color: "#ff00ff" },
+              { icon: Zap, title: "Treningi Indywidualne", desc: "Spersonalizowane plany treningowe w oparciu o dostępne wskaźniki fizjologiczne (SmO2, VT, Moc, Tętno)", color: "#00f0ff" },
+              { icon: Shield, title: "Fizjoterapia Online", desc: "Profesjonalna rehabilitacja zdalna oraz dobór programów fizjoterapii pourazowej/pooperacyjnej", color: "#ff00ff" },
               { icon: Activity, title: "Analiza Danych", desc: "Zaawansowana analiza wydajności w czasie rzeczywistym", color: "#00ff88" },
-              { icon: Users, title: "Społeczność", desc: "Dołącz do community kolarzy", color: "#b829dd" },
-              { icon: Bike, title: "Wszystkie Dyscypliny", desc: "Szosowe, MTB, CX, triathlon", color: "#00f0ff" },
+              { icon: Users, title: "Społeczność", desc: "Dołącz do Wielkiego Community kolarzy, biegaczy i sportowców", color: "#b829dd" },
+              { icon: Bike, title: "Dyscypliny", desc: "Kolarstwo szosowe/TT/rekreacyjne/ultra, bieganie, pływanie, treningi siłowe", color: "#00f0ff" },
               { icon: Sparkles, title: "Innowacje", desc: "Najnowsze metody treningowe", color: "#ff00ff" },
             ].map((feature, index) => (
               <motion.div key={feature.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1 }} viewport={{ once: true }} className="glass-card rounded-2xl p-8 group">

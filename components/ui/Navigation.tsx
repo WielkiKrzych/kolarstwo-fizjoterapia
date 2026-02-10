@@ -29,7 +29,7 @@ export function Navigation() {
               <Activity className="w-8 h-8 text-[#ff00ff]" />
             </div>
             <span className="text-xl font-bold gradient-text">
-              ProKolarz
+              WielkiKrzych
             </span>
           </Link>
 
