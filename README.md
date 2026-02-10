@@ -61,21 +61,14 @@ Formularze używają **Formspree** do wysyłania maili:
 
 **Krok 4:** Skopiuj endpointy URL (np. `https://formspree.io/f/xnqkvnna`)
 
-**Krok 5:** Podmień w kodzie:
+**Krok 5:** Podmień endpoint Formspree w kodzie:
 
-W `app/kontakt/page.tsx` (około linia 28):
+W pliku `app/kontakt/page.tsx` znajdź linię 28 i podmień `YOUR_FORM_ID`:
 ```typescript
-// Z:
-const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-
-// Na:
 const response = await fetch("https://formspree.io/f/TWOJ_KOD", {
 ```
 
-W `components/Newsletter.tsx` (około linia 18):
-```typescript
-// To samo dla newslettera (możesz użyć tego samego lub osobnego)
-```
+W pliku `components/Newsletter.tsx` znajdź linię 18 i zrób to samo.
 
 **Krok 6:** W Formspree dodaj powiadomienia email
 
@@ -92,6 +85,32 @@ const socialLinks = [
 
 To samo w `app/kontakt/page.tsx` (sekcja "Znajdź mnie w social media")
 
+## 🔒 Bezpieczeństwo
+
+### Zmienne środowiskowe
+Nigdy nie commituj kluczy API do repozytorium! Użyj pliku `.env.local`:
+
+```bash
+# .env.local (dodaj do .gitignore!)
+NEXT_PUBLIC_FORMSPREE_ID=twoj_kod_formspree
+```
+
+W kodzie:
+```typescript
+const response = await fetch(
+  `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`,
+  // ...
+);
+```
+
+### Sprawdź .gitignore
+Upewnij się, że zawiera:
+```
+.env*.local
+node_modules/
+.next/
+```
+
 ### 5. Uruchomienie lokalne
 
 ```bash
@@ -104,21 +123,33 @@ Otwórz [http://localhost:3000](http://localhost:3000)
 
 To proste! Nie potrzebujesz CMS ani bazy danych.
 
-**Krok 1:** Utwórz nowy plik w folderze `content/blog/`
+### Wymagane pola frontmatter:
+- `title` (string) - Tytuł wpisu
+- `date` (YYYY-MM-DD) - Data publikacji
+- `excerpt` (string) - Krótki opis (2-3 zdania)
+- `tags` (array) - Tagi w formacie ["tag1", "tag2"]
+
+### Opcjonalne pola:
+- `author` - Autor wpisu
+- `coverImage` - Ścieżka do obrazka głównego
+
+### Krok 1: Utwórz plik
 ```bash
 content/blog/moj-nowy-wpis.md
 ```
 
-**Krok 2:** Użyj formatu YAML frontmatter:
+### Krok 2: Użyj formatu YAML frontmatter:
 ```markdown
 ---
-title: "Tytuł Twojego wpisu"
+title: "5 Błędów Początkujących Kolarzy"
 date: "2025-02-15"
-excerpt: "Krótki opis wpisu (pokaże się na liście)"
-tags: ["trening", "poradnik", "kolarstwo"]
+excerpt: "Poznaj najczęstsze błędy, które popełniają osoby zaczynające przygodę z kolarstwem i dowiedz się, jak ich uniknąć."
+tags: ["trening", "poradnik", "dla-początkujących"]
+author: "Jan Kowalski"
+coverImage: "/images/blog/bledy-kolarzy.jpg"
 ---
 
-# Treść wpisu
+# 5 Błędów Początkujących Kolarzy
 
 Tu piszesz treść w **Markdown**.
 
@@ -132,7 +163,14 @@ Tu piszesz treść w **Markdown**.
 I tak dalej...
 ```
 
-**Krok 3:** Zapisz plik i zrób deploy - wpis pojawi się automatycznie!
+### Krok 3: Testowanie wpisu lokalnie
+1. Dodaj plik `.md` w `content/blog/`
+2. Uruchom `npm run dev`
+3. Sprawdź http://localhost:3000/blog
+4. Kliknij w swój wpis - powinien się wyświetlić
+
+### Krok 4: Deploy
+Zapisz plik i zrób deploy - wpis pojawi się automatycznie!
 
 ## 🎨 Personalizacja treści
 
@@ -227,18 +265,66 @@ kolarstwo-fizjoterapia/
     └── images/                  # Zdjęcia
 ```
 
-## 🌐 Wdrożenie
+## 🌐 Wdrożenie na produkcję
 
-### Vercel (najprostsze)
+### Opcja 1: Vercel (zalecana dla Next.js)
 
-```bash
-npm install -g vercel
-vercel
-```
+**Krok 1:** Zaloguj się na [vercel.com](https://vercel.com)
 
-### Netlify
+**Krok 2:** Kliknij "Add New Project"
 
-Połącz repozytorium z GitHub w panelu Netlify.
+**Krok 3:** Zaimportuj repozytorium GitHub
+
+**Krok 4:** Ustaw zmienne środowiskowe:
+- Przejdź do Settings → Environment Variables
+- Dodaj `NEXT_PUBLIC_FORMSPREE_ID` = twój kod
+
+**Krok 5:** Deploy!
+
+**Własna domena:**
+- Settings → Domains
+- Dodaj swoją domenę (np. `prokolarz.pl`)
+- Zaktualizuj DNS zgodnie z instrukcjami
+
+### Opcja 2: Netlify
+
+**Krok 1:** Zaloguj się na [netlify.com](https://netlify.com)
+
+**Krok 2:** "Add new site" → "Import from Git"
+
+**Krok 3:** Wybierz repozytorium
+
+**Krok 4:** Konfiguracja build:
+- Build command: `npm run build`
+- Publish directory: `.next`
+
+**Krok 5:** Dodaj zmienne środowiskowe w Site settings
+
+### Po wdrożeniu sprawdź:
+- [ ] Czy wszystkie strony działają
+- [ ] Czy formularz wysyła maile
+- [ ] Czy blog się ładuje
+- [ ] Czy nawigacja działa
+- [ ] Czy social media linki są poprawne
+
+## ⚡ Optymalizacja wydajności
+
+### Zdjęcia
+- Używaj formatu WebP zamiast JPG/PNG
+- Kompresuj obrazy przed uploadem (np. [tinypng.com](https://tinypng.com))
+- Dodaj atrybuty `width` i `height` do tagów `<img>`
+
+### Animacje
+- Ogranicz animacje na urządzeniach mobilnych
+- Używaj `will-change` tylko gdy konieczne
+
+### Lighthouse Score (cel):
+- Performance: >90
+- Accessibility: >90
+- Best Practices: >90
+- SEO: >90
+
+Sprawdź w Chrome DevTools → Lighthouse
 
 ## 🐛 Rozwiązywanie problemów
 
@@ -257,8 +343,23 @@ Połącz repozytorium z GitHub w panelu Netlify.
 npm run dev -- -p 3001
 ```
 
-## 📋 TODO - Co jeszcze możesz dodać
+## 💬 Wsparcie
 
+### Problemy techniczne
+- Otwórz [Issue na GitHub](https://github.com/WielkiKrzych/kolarstwo-fizjoterapia/issues)
+- Opisz problem szczegółowo
+- Dodaj screenshot/zrzut z konsoli
+
+### Pytania
+- Sprawdź sekcję FAQ w README
+- Przeczytaj dokumentację Next.js: [nextjs.org/docs](https://nextjs.org/docs)
+
+### Contributing
+Pull requesty są mile widziane! Przed dużymi zmianami otwórz issue, żeby przedyskutować propozycję.
+
+## 📋 Roadmap
+
+### ✅ Zrobione (v1.0)
 - [x] Design Cyberpunk + Liquid Glass
 - [x] Strona główna
 - [x] Podstrony oferty
@@ -268,11 +369,15 @@ npm run dev -- -p 3001
 - [x] Strona "O mnie"
 - [x] Social media links
 - [x] Newsletter
+
+### 🚧 W trakcie
 - [ ] Prawdziwe zdjęcia do galerii
 - [ ] Prawdziwe treści (teksty o treningach)
+
+### 📝 Do zrobienia
 - [ ] Podłączyć własne konta social media
 - [ ] Skonfigurować Formspree
-- [ ] Wdrożyć na produkcję
+- [ ] Wdrożyć na produkcję (Vercel/Netlify)
 
 ## 📝 Licencja
 
