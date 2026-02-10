@@ -33,14 +33,14 @@ export default function HomePage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <Link href="/login">
+              <Link href="/platnosci">
                 <button className="px-4 py-2 text-[#00f0ff] border border-[#00f0ff]/50 rounded-lg hover:bg-[#00f0ff]/10 transition-all">
-                  Zaloguj
+                  Cennik
                 </button>
               </Link>
-              <Link href="/register">
+              <Link href="/kontakt">
                 <button className="px-4 py-2 bg-gradient-to-r from-[#00f0ff] to-[#b829dd] text-black font-semibold rounded-lg hover:opacity-90 transition-all">
-                  Rozpocznij
+                  Kontakt
                 </button>
               </Link>
             </div>
@@ -68,9 +68,9 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/register">
+              <Link href="/kontakt">
                 <button className="group px-8 py-4 bg-gradient-to-r from-[#00f0ff] to-[#b829dd] text-black font-bold rounded-xl hover:scale-105 transition-all flex items-center space-x-2">
-                  <span>Rozpocznij za darmo</span>
+                  <span>Skontaktuj się</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>

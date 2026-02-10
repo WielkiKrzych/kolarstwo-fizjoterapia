@@ -5,179 +5,180 @@ Nowoczesny design w stylu Cyberpunk + Liquid Glass.
 
 ![Cyberpunk Design](https://img.shields.io/badge/Design-Cyberpunk%20+%20Liquid%20Glass-cyan)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
 ## 🚀 Funkcjonalności
 
-- ✅ **Strona główna** - Hero z animacjami, statystyki, funkcje
+- ✅ **Strona główna** - Hero z animacjami, statystyki
 - ✅ **Treningi kolarskie** - Szczegółowa oferta, poziomy zaawansowania
 - ✅ **Fizjoterapia zdalna** - Usługi, jak to działa
-- ✅ **Galeria** - Kategorie z filtrami, hover effects
-- ✅ **Kontakt** - Formularz kontaktowy (wysyła maila)
+- ✅ **Galeria** - Kategorie z filtrami
+- ✅ **Kontakt** - Formularz z wysyłką maili (Formspree)
 - ✅ **Cennik** - Przejrzyste plany i pakiety
-- ✅ **Kalendarz** - Interaktywny widok (mockup)
-
-### Design System - Cyberpunk + Liquid Glass
-- 🎨 **Ciemne tło** `#0a0a0f` z neonowymi akcentami
-- 💡 **Neon colors**: Cyan `#00f0ff`, Pink `#ff00ff`, Purple `#b829dd`, Green `#00ff88`
-- 🫗 **Glassmorphism** - `backdrop-blur(20px)` z półprzezroczystymi powierzchniami
-- ✨ **Gradient text** - Wielokolorowe nagłówki
-- 🔆 **Glow effects** - Animowane orby i neonowe cienie
-- 📐 **Cyber grid** - Tło w stylu siatki cyberpunk
-- 🎭 **Framer Motion** - Płynne animacje wejścia i hover effects
+- ✅ **Kalendarz** - Widok planu zajęć
 
 ## 🛠️ Stos technologiczny
 
-- **Framework**: Next.js 16 (App Router, Turbopack)
+- **Framework**: Next.js 16 (App Router)
 - **Język**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Animacje**: Framer Motion
-- **Ikony**: Lucide React
+- **Formularz**: Formspree (wysyłka maili bez backendu)
 
-## 📦 Instalacja
+## 📦 Instalacja i uruchomienie
 
-### Wymagania
-- Node.js 18+ 
-- npm
-
-### Szybki start
+### 1. Klonowanie repozytorium
 
 ```bash
-# 1. Klonuj repozytorium
 git clone https://github.com/WielkiKrzych/kolarstwo-fizjoterapia.git
 cd kolarstwo-fizjoterapia
-
-# 2. Zainstaluj zależności
-npm install
-
-# 3. Uruchom serwer deweloperski
-npm run dev
-
-# Gotowe! Otwórz http://localhost:3000
 ```
+
+### 2. Instalacja zależności
+
+```bash
+npm install
+```
+
+### 3. Konfiguracja formularza kontaktowego (WAŻNE!)
+
+Formularz używa **Formspree** do wysyłania maili bez backendu:
+
+**Krok 1:** Wejdź na [formspree.io](https://formspree.io)
+
+**Krok 2:** Załóż darmowe konto
+
+**Krok 3:** Utwórz nowy formularz i skopiuj endpoint URL (np. `https://formspree.io/f/xnqkvnna`)
+
+**Krok 4:** Otwórz plik `app/kontakt/page.tsx` i zamień:
+```typescript
+// Znajdź tę linię (około linia 23):
+const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+
+// Zamień na swój endpoint:
+const response = await fetch("https://formspree.io/f/xnqkvnna", {
+```
+
+**Krok 5:** (Opcjonalnie) W Formspree dodaj powiadomienia email, aby dostawać maile na swoją skrzynkę
+
+### 4. Uruchomienie lokalne
+
+```bash
+npm run dev
+```
+
+Otwórz [http://localhost:3000](http://localhost:3000)
 
 ## 🏗️ Budowa produkcji
 
 ```bash
-# Budowa
 npm run build
-
-# Uruchomienie produkcji
-npm start
 ```
 
-## 📁 Struktura projektu
-
-```
-kolarstwo-fizjoterapia/
-├── app/                          # Next.js App Router
-│   ├── page.tsx                 # Strona główna (Cyberpunk Hero)
-│   ├── treningi/                # Treningi kolarskie
-│   ├── fizjoterapia/            # Fizjoterapia zdalna
-│   ├── galeria/                 # Galeria z filtrami
-│   ├── kontakt/                 # Formularz kontaktowy
-│   ├── kalendarz/               # Kalendarz (mockup)
-│   ├── platnosci/               # Cennik
-│   ├── api/                     # API Routes
-│   │   └── contact/             # Tylko formularz kontaktowy
-│   ├── layout.tsx              # Główny layout
-│   └── globals.css             # Globalne style + Cyberpunk theme
-├── components/
-│   ├── ui/                      # Komponenty UI
-│   │   ├── Button.tsx
-│   │   ├── Card.tsx
-│   │   ├── Navigation.tsx
-│   │   └── ...
-│   └── analytics.tsx            # Google Analytics (opcjonalnie)
-├── lib/
-│   └── utils.ts                # Utility functions
-└── public/                     # Zasoby statyczne
-```
-
-## 🎨 Design System
-
-### Cyberpunk Theme
-
-Zmienne CSS zdefiniowane w `globals.css`:
-
-```css
-/* Tło */
---background: #0a0a0f;
-
-/* Neon colors */
---neon-cyan: #00f0ff;
---neon-pink: #ff00ff;
---neon-purple: #b829dd;
---neon-green: #00ff88;
-
-/* Glass effects */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.glass-card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 240, 255, 0.2);
-}
-```
-
-### Animacje
-
-- `animate-float` - Unoszące się orby w tle
-- `animate-pulse-glow` - Pulsujący neon
-- Framer Motion - Animacje wejścia komponentów
+Pliki produkcyjne trafią do folderu `dist/` (lub `.next/`).
 
 ## 🌐 Wdrożenie
 
-### Vercel (zalecane)
+### Vercel (najprostsze)
 
 ```bash
-# Zainstaluj Vercel CLI
 npm install -g vercel
-
-# Wdróż
 vercel
 ```
 
 ### Inne opcje
-- **Netlify** - Drag & drop folderu `dist`
-- **GitHub Pages** - Dla statycznych stron
+- **Netlify** - Połącz z GitHub repo
+- **GitHub Pages** - Dla statycznej wersji
 
-## 📝 Personalizacja
+## 📝 Personalizacja treści
 
-### Zmiana treści
+### Zmiana tekstów
 
-Wszystkie teksty znajdują się bezpośrednio w plikach `.tsx` w folderze `app/`:
+Wszystkie teksty znajdują się w plikach w folderze `app/`:
 
-- `app/page.tsx` - Strona główna
-- `app/treningi/page.tsx` - Oferta treningów
-- `app/fizjoterapia/page.tsx` - Oferta fizjoterapii
-- `app/platnosci/page.tsx` - Cennik
-- `app/kontakt/page.tsx` - Dane kontaktowe
+| Plik | Zawartość |
+|------|-----------|
+| `app/page.tsx` | Strona główna |
+| `app/treningi/page.tsx` | Oferta treningów |
+| `app/fizjoterapia/page.tsx` | Oferta fizjoterapii |
+| `app/platnosci/page.tsx` | Cennik |
+| `app/kontakt/page.tsx` | Formularz kontaktowy |
+
+### Zmiana danych kontaktowych
+
+W `app/kontakt/page.tsx` (linie 45-67) zmień:
+- Email
+- Telefon
+- Godziny pracy
 
 ### Zmiana kolorów
 
 W `app/globals.css` możesz zmienić kolory neonowe:
 
 ```css
---neon-cyan: #00f0ff;     /* Zmień na wybrany kolor */
---neon-pink: #ff00ff;
---neon-purple: #b829dd;
+--neon-cyan: #00f0ff;     /* Główny kolor akcentu */
+--neon-pink: #ff00ff;     /* Drugi kolor */
+--neon-purple: #b829dd;   /* Trzeci kolor */
 ```
+
+## 📁 Struktura projektu
+
+```
+kolarstwo-fizjoterapia/
+├── app/                      # Strony Next.js
+│   ├── page.tsx             # Strona główna
+│   ├── treningi/            # Oferta treningów
+│   ├── fizjoterapia/        # Oferta fizjoterapii
+│   ├── galeria/             # Galeria
+│   ├── platnosci/           # Cennik
+│   ├── kontakt/             # Formularz kontaktowy
+│   ├── kalendarz/           # Plan zajęć
+│   ├── layout.tsx           # Layout główny
+│   └── globals.css          # Style + Cyberpunk theme
+├── components/
+│   └── ui/                  # Komponenty UI
+│       ├── Navigation.tsx   # Nawigacja
+│       ├── Button.tsx       # Przyciski
+│       └── ...
+└── public/                  # Obrazy i zasoby
+```
+
+## ⚠️ Ważne uwagi
+
+1. **Formularz kontaktowy** - Wymaga konfiguracji Formspree (patrz sekcja "Konfiguracja formularza")
+
+2. **Brak backendu** - To strona statyczna, nie wymaga bazy danych ani serwera backend
+
+3. **Galeria** - Używa emoji jako placeholderów. Dodaj prawdziwe zdjęcia w folderze `public/images/`
+
+4. **Kalendarz** - Jest to widok statyczny (mockup). Nie podłączony do żadnego systemu rezerwacji.
+
+## 🎨 Design System
+
+### Kolory neonowe
+- **Cyan** `#00f0ff` - Główny akcent
+- **Pink** `#ff00ff` - Drugi akcent
+- **Purple** `#b829dd` - Trzeci akcent
+- **Green** `#00ff88` - Sukces/pozytywne
+
+### Efekty
+- **Glassmorphism** - Półprzezroczyste tła z blur
+- **Gradient text** - Wielokolorowe nagłówki
+- **Glow effects** - Neonowe cienie
+- **Floating orbs** - Unoszące się kule w tle
 
 ## 🐛 Rozwiązywanie problemów
 
-### Port 3000 jest zajęty
+### Formularz nie wysyła maili
+- Sprawdź czy podałeś poprawny URL Formspree w `app/kontakt/page.tsx`
+- Sprawdź czy masz połączenie z internetem
+- Sprawdź konsolę przeglądarki (F12 → Console) na błędy
+
+### Port 3000 zajęty
 ```bash
-lsof -ti:3000 | xargs kill -9
-# lub
 npm run dev -- -p 3001
 ```
 
-### Błędy zależności
+### Błędy instalacji
 ```bash
 rm -rf node_modules package-lock.json
 npm install
@@ -188,20 +189,16 @@ npm install
 - [x] Design Cyberpunk + Liquid Glass
 - [x] Strona główna
 - [x] Podstrony oferty
-- [x] Formularz kontaktowy
+- [x] Formularz kontaktowy (Formspree)
 - [x] Cennik
-- [ ] Dodać prawdziwe treści (teksty)
-- [ ] Dodać prawdziwe zdjęcia
-- [ ] Skonfigurować wysyłkę maili (EmailJS/Resend)
+- [ ] Dodać prawdziwe zdjęcia do galerii
+- [ ] Dodać prawdziwe treści (teksty o treningach)
+- [ ] Skonfigurować własny email w Formspree
 - [ ] Wdrożyć na produkcję
 
 ## 📝 Licencja
 
 MIT
-
-## 👨‍💻 Autor
-
-Stworzone z ❤️ przy użyciu Next.js, TypeScript i Tailwind CSS
 
 ---
 
