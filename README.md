@@ -28,9 +28,11 @@ Nowoczesny design w stylu Cyberpunk + Liquid Glass.
 - **Framework**: Next.js 16 (App Router)
 - **Język**: TypeScript
 - **Styling**: Tailwind CSS v4
-- **Animacje**: Framer Motion
+- **Animacje**: Framer Motion (LazyMotion + reduced motion)
+- **Czcionki**: next/font (Inter, self-hosted)
 - **Blog**: Markdown + gray-matter + remark
 - **Formularz**: Formspree (wysyłka maili bez backendu)
+- **SEO**: JSON-LD structured data, OpenGraph, Twitter Cards
 
 ## 📦 Instalacja i uruchomienie
 
@@ -92,16 +94,12 @@ Nigdy nie commituj kluczy API do repozytorium! Użyj pliku `.env.local`:
 
 ```bash
 # .env.local (dodaj do .gitignore!)
+NEXT_PUBLIC_SITE_URL=https://twoja-domena.pl
 NEXT_PUBLIC_FORMSPREE_ID=twoj_kod_formspree
+NEXT_PUBLIC_TWITTER_HANDLE=TwojHandle
 ```
 
-W kodzie:
-```typescript
-const response = await fetch(
-  `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`,
-  // ...
-);
-```
+Przykład konfiguracji znajduje się w pliku `.env.local.example`.
 
 ### Sprawdź .gitignore
 Upewnij się, że zawiera:
@@ -248,21 +246,29 @@ kolarstwo-fizjoterapia/
 │   ├── kontakt/                 # Kontakt
 │   ├── platnosci/               # Cennik
 │   ├── kalendarz/               # Kalendarz
+│   ├── galeria/                 # Galeria
+│   ├── sitemap.ts              # Dynamiczny sitemap
+│   ├── robots.ts               # Dynamiczny robots.txt
 │   ├── layout.tsx              # Layout główny
 │   └── globals.css             # Style
 ├── components/
 │   ├── ui/                      # Komponenty UI
-│   │   ├── Navigation.tsx      # Nawigacja
+│   │   ├── Navigation.tsx      # Nawigacja (z ARIA)
 │   │   ├── SocialMediaBar.tsx  # Pasek social (prawy)
 │   │   └── ...
+│   ├── JsonLd.tsx              # Structured data schemas
 │   └── Newsletter.tsx          # Sekcja newslettera
 ├── content/
 │   └── blog/                    # Wpisy bloga (.md)
 ├── lib/
 │   ├── blog.ts                 # Funkcje bloga
+│   ├── motion.tsx              # LazyMotion provider
+│   ├── lazy-load.tsx           # Dynamic imports utility
 │   └── utils.ts                # Utility
-└── public/                      # Zasoby statyczne
-    └── images/                  # Zdjęcia
+├── public/                      # Zasoby statyczne
+│   └── images/                  # Zdjęcia
+├── .env.local.example           # Przykład zmiennych środowiskowych
+└── README.md
 ```
 
 ## 🌐 Wdrożenie na produkcję
@@ -277,7 +283,10 @@ kolarstwo-fizjoterapia/
 
 **Krok 4:** Ustaw zmienne środowiskowe:
 - Przejdź do Settings → Environment Variables
-- Dodaj `NEXT_PUBLIC_FORMSPREE_ID` = twój kod
+- Dodaj:
+  - `NEXT_PUBLIC_SITE_URL` = twoja domena (np. https://prokolarz.pl)
+  - `NEXT_PUBLIC_FORMSPREE_ID` = twój kod formspree
+  - `NEXT_PUBLIC_TWITTER_HANDLE` = twój handle (bez @)
 
 **Krok 5:** Deploy!
 
@@ -307,16 +316,33 @@ kolarstwo-fizjoterapia/
 - [ ] Czy nawigacja działa
 - [ ] Czy social media linki są poprawne
 
-## ⚡ Optymalizacja wydajności
+## ⚡ Optymalizacja
+
+Projekt jest zoptymalizowany pod kątem wydajności, SEO i dostępności.
+
+### 🚀 Wydajność
+- **LazyMotion** - animacje ładowane on-demand
+- **next/font** - czcionki self-hosted (brak zewnętrznych requestów)
+- **Dynamic imports** - komponenty ładowane gdy potrzebne
+- **Package optimization** - tree-shaking dla lucide-react i framer-motion
+
+### 🔍 SEO
+- **JSON-LD** - structured data (Organization, Person, Service, BlogPosting)
+- **OpenGraph** - pełne metadane dla social media
+- **Twitter Cards** - summary_large_image
+- **Sitemap** - dynamicznie generowany z lastModified i priority
+- **Robots.txt** - z crawl-delay i sitemap location
+
+### ♿ Dostępność (WCAG AA)
+- **Skip link** - "Przejdź do treści" dla klawiatury
+- **ARIA** - aria-expanded, aria-controls dla mobile menu
+- **Focus visible** - neon cyan outline dla nawigacji klawiaturowej
+- **Reduced motion** - respektowanie prefers-reduced-motion
 
 ### Zdjęcia
-- Używaj formatu WebP zamiast JPG/PNG
+- Używaj formatu WebP/AVIF zamiast JPG/PNG
 - Kompresuj obrazy przed uploadem (np. [tinypng.com](https://tinypng.com))
 - Dodaj atrybuty `width` i `height` do tagów `<img>`
-
-### Animacje
-- Ogranicz animacje na urządzeniach mobilnych
-- Używaj `will-change` tylko gdy konieczne
 
 ### Lighthouse Score (cel):
 - Performance: >90
@@ -370,6 +396,16 @@ Pull requesty są mile widziane! Przed dużymi zmianami otwórz issue, żeby prz
 - [x] Social media links
 - [x] Newsletter
 
+### ✅ Optymalizacje (v1.1)
+- [x] LazyMotion + reduced motion
+- [x] next/font (self-hosted fonts)
+- [x] JSON-LD structured data
+- [x] OpenGraph + Twitter Cards
+- [x] Skip link + ARIA
+- [x] Focus visible styles
+- [x] TypeScript strict mode
+- [x] Dynamic sitemap/robots
+
 ### 🚧 W trakcie
 - [ ] Prawdziwe zdjęcia do galerii
 - [ ] Prawdziwe treści (teksty o treningach)
@@ -377,6 +413,7 @@ Pull requesty są mile widziane! Przed dużymi zmianami otwórz issue, żeby prz
 ### 📝 Do zrobienia
 - [ ] Podłączyć własne konta social media
 - [ ] Skonfigurować Formspree
+- [ ] Dodać OG image (/public/images/og-default.jpg)
 - [ ] Wdrożyć na produkcję (Vercel/Netlify)
 
 ## 📝 Licencja
