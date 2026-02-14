@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Bike, Activity } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "@/lib/motion";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +18,10 @@ export function Navigation() {
     { href: "/kontakt", label: "Kontakt" },
   ];
 
+  const mobileMenuId = "mobile-navigation-menu";
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[#00f0ff]/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[#00f0ff]/10" role="navigation" aria-label="Główna nawigacja">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -50,6 +52,9 @@ export function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+            aria-expanded={isOpen}
+            aria-controls={mobileMenuId}
+            aria-label={isOpen ? "Zamknij menu" : "Otwórz menu"}
           >
             {isOpen ? (
               <X className="w-6 h-6 text-white" />
@@ -64,6 +69,7 @@ export function Navigation() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id={mobileMenuId}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

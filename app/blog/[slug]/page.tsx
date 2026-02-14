@@ -2,6 +2,7 @@ import { getPostBySlug, getPostContent, getAllSlugs } from "@/lib/blog";
 import { Navigation } from "@/components/ui/Navigation";
 import { Calendar, ArrowLeft, Tag } from "lucide-react";
 import Link from "next/link";
+import { JsonLd, createBlogPostingSchema } from "@/components/JsonLd";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -47,7 +48,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const contentHtml = await getPostContent(slug);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0f]">
+    <>
+      <JsonLd data={createBlogPostingSchema({
+        title: post.title,
+        excerpt: post.excerpt,
+        date: post.date,
+        slug: post.slug,
+        coverImage: post.coverImage,
+        tags: post.tags,
+      })} />
+      <main className="min-h-screen bg-[#0a0a0f]">
       <Navigation />
 
       <article className="pt-32 pb-20 relative overflow-hidden">
@@ -101,5 +111,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </article>
     </main>
+    </>
   );
 }

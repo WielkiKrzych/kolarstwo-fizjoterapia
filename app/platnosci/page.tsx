@@ -1,7 +1,7 @@
 "use client";
 
 import { Navigation } from "@/components/ui/Navigation";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/motion";
 import { Check, ArrowRight, Star, Zap, Trophy } from "lucide-react";
 import Link from "next/link";
 

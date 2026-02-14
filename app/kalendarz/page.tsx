@@ -1,7 +1,7 @@
 "use client";
 
 import { Navigation } from "@/components/ui/Navigation";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/motion";
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Clock } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";

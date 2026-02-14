@@ -1,9 +1,10 @@
 "use client";
 
 import { Navigation } from "@/components/ui/Navigation";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/motion";
 import { Bike, Target, TrendingUp, Calendar, Clock, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { JsonLd, createTrainingServiceSchema } from "@/components/JsonLd";
 
 const trainingFeatures = [
   {
@@ -64,7 +65,9 @@ const trainingLevels = [
 
 export default function TreningiPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f]">
+    <>
+      <JsonLd data={createTrainingServiceSchema()} />
+      <main className="min-h-screen bg-[#0a0a0f]">
       <Navigation />
 
       {/* Hero Section */}
@@ -241,5 +244,6 @@ export default function TreningiPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

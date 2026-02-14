@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Award, Users, Target, Zap } from "lucide-react";
+import { motion } from "@/lib/motion";
+import { Award, Users, Target, Zap, Bike } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";
 
 const features = [
@@ -141,6 +141,3 @@ export function About() {
     </section>
   );
 }
-
-// Import Bike icon
-import { Bike } from "lucide-react";

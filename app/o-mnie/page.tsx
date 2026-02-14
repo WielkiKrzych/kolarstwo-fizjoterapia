@@ -1,9 +1,10 @@
 "use client";
 
 import { Navigation } from "@/components/ui/Navigation";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/motion";
 import { Bike, Award, Users, Heart, ArrowRight, Calendar, MapPin } from "lucide-react";
 import Link from "next/link";
+import { JsonLd, createPersonSchema } from "@/components/JsonLd";
 
 const stats = [
   { value: "8+", label: "Lat doświadczenia", icon: Calendar },
@@ -22,7 +23,9 @@ const certifications = [
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f]">
+    <>
+      <JsonLd data={createPersonSchema()} />
+      <main className="min-h-screen bg-[#0a0a0f]">
       <Navigation />
 
       <section className="pt-32 pb-20 relative overflow-hidden">
@@ -203,5 +206,6 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

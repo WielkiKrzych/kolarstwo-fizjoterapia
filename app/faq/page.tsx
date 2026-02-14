@@ -1,7 +1,7 @@
 "use client";
 
 import { Navigation } from "@/components/ui/Navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "@/lib/motion";
 import { HelpCircle, ChevronDown, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";

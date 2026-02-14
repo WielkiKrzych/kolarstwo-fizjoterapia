@@ -1,9 +1,10 @@
 "use client";
 
 import { Navigation } from "@/components/ui/Navigation";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/motion";
 import { Video, Users, TrendingUp, Calendar, Clock, Heart, Activity, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { JsonLd, createPhysiotherapyServiceSchema } from "@/components/JsonLd";
 
 const therapyFeatures = [
   {
@@ -96,7 +97,9 @@ const howItWorks = [
 
 export default function FizjoterapiaPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f]">
+    <>
+      <JsonLd data={createPhysiotherapyServiceSchema()} />
+      <main className="min-h-screen bg-[#0a0a0f]">
       <Navigation />
 
       {/* Hero Section */}
@@ -305,5 +308,6 @@ export default function FizjoterapiaPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

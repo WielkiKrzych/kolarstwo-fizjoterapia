@@ -17,9 +17,6 @@ const nextConfig = {
       },
     ],
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
@@ -28,6 +25,9 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
+  },
+  turbopack: {
+    root: __dirname,
   },
 };
 

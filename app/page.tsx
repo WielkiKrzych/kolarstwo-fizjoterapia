@@ -1,13 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "@/lib/motion";
 import { ArrowRight, Sparkles, Zap, Shield, Activity, Users, Bike } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "@/components/ui/Navigation";
+import { JsonLd, createOrganizationSchema } from "@/components/JsonLd";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0f] overflow-hidden">
+    <>
+      <JsonLd data={createOrganizationSchema()} />
+      <main id="main-content" className="min-h-screen bg-[#0a0a0f] overflow-hidden">
       {/* Background Grid */}
       <div className="fixed inset-0 cyber-grid opacity-20 pointer-events-none" />
       
@@ -39,16 +42,18 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/kontakt">
-                <button className="group px-8 py-4 bg-gradient-to-r from-[#00f0ff] to-[#b829dd] text-black font-bold rounded-xl hover:scale-105 transition-all flex items-center space-x-2">
-                  <span>Skontaktuj się</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+              <Link
+                href="/kontakt"
+                className="group px-8 py-4 bg-gradient-to-r from-[#00f0ff] to-[#b829dd] text-black font-bold rounded-xl hover:scale-105 transition-all flex items-center space-x-2"
+              >
+                <span>Skontaktuj się</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/treningi">
-                <button className="px-8 py-4 glass text-white font-semibold rounded-xl hover:bg-white/10 transition-all">
-                  Zobacz ofertę
-                </button>
+              <Link
+                href="/treningi"
+                className="px-8 py-4 glass text-white font-semibold rounded-xl hover:bg-white/10 transition-all"
+              >
+                Zobacz ofertę
               </Link>
             </div>
           </motion.div>
@@ -101,5 +106,6 @@ export default function HomePage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

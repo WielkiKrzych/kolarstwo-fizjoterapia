@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, lazy, ComponentType } from "react";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/motion";
 
 const LoadingFallback = () => (
   <div className="w-full h-64 flex items-center justify-center">

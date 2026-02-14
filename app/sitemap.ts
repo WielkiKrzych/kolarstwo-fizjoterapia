@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.APP_URL || "https://prokolarz.pl";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://prokolarz.pl";
 
   return [
     {
@@ -51,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/kalendarz`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.6,
     },
   ];
 }
