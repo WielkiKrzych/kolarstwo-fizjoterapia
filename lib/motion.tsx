@@ -26,7 +26,7 @@ export function MotionProvider({ children }: { children: ReactNode }) {
 
   return (
     <ReducedMotionContext.Provider value={prefersReducedMotion}>
-      <LazyMotion features={domAnimation} strict>
+      <LazyMotion features={domAnimation}>
         {children}
       </LazyMotion>
     </ReducedMotionContext.Provider>
