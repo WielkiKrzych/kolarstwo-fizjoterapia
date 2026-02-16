@@ -1,10 +1,11 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import remarkGfm from "remark-gfm";
+import html from "remark-html";
 
-const postsDirectory = path.join(process.cwd(), 'content/blog');
+const postsDirectory = path.join(process.cwd(), "content/blog");
 
 export interface BlogPost {
   slug: string;
@@ -24,18 +25,18 @@ export function getAllPosts(): BlogPost[] {
 
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
-    .filter((fileName) => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith(".md"))
     .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, '');
+      const slug = fileName.replace(/\.md$/, "");
       const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data, content } = matter(fileContents);
 
       return {
         slug,
-        title: data.title || 'Untitled',
+        title: data.title || "Untitled",
         date: data.date || new Date().toISOString(),
-        excerpt: data.excerpt || content.slice(0, 150) + '...',
+        excerpt: data.excerpt || content.slice(0, 150) + "...",
         content,
         coverImage: data.coverImage,
         tags: data.tags || [],
@@ -49,19 +50,19 @@ export function getAllPosts(): BlogPost[] {
 export function getPostBySlug(slug: string): BlogPost | null {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
-    
+
     if (!fs.existsSync(fullPath)) {
       return null;
     }
 
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
     return {
       slug,
-      title: data.title || 'Untitled',
+      title: data.title || "Untitled",
       date: data.date || new Date().toISOString(),
-      excerpt: data.excerpt || content.slice(0, 150) + '...',
+      excerpt: data.excerpt || content.slice(0, 150) + "...",
       content,
       coverImage: data.coverImage,
       tags: data.tags || [],
@@ -73,10 +74,11 @@ export function getPostBySlug(slug: string): BlogPost | null {
 
 export async function getPostContent(slug: string): Promise<string> {
   const post = getPostBySlug(slug);
-  if (!post) return '';
+  if (!post) return "";
 
   const processedContent = await remark()
-    .use(html)
+    .use(remarkGfm)
+    .use(html, { sanitize: false })
     .process(post.content);
 
   return processedContent.toString();
@@ -89,6 +91,6 @@ export function getAllSlugs(): string[] {
 
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames
-    .filter((fileName) => fileName.endsWith('.md'))
-    .map((fileName) => fileName.replace(/\.md$/, ''));
+    .filter((fileName) => fileName.endsWith(".md"))
+    .map((fileName) => fileName.replace(/\.md$/, ""));
 }

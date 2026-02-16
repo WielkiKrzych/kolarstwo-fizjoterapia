@@ -12,7 +12,7 @@ author: "Krzysztof - WielkiKrzych"
 
 Termin "Zone 2" jest dziś bardzo popularny w świecie treningu kolarskiego. Wielu sportowców traktuje go jak magiczną strefę, w której zachodzą specjalne adaptacje fizjologiczne, niedostępne przy innych intensywnościach. Ale czy to rzeczywiście tak działa?
 
-Ten artykuł demistyfikuje pojęcie Zone 2 i pokazuje, dlaczego jest ona ważna - ale nie z powodów, które mogłobyś się spodziewać.
+Ten artykuł demistyfikuje pojęcie Zone 2 i pokazuje, dlaczego jest ona ważna - ale nie z powodów, których mógłbyś się spodziewać.
 
 ---
 
@@ -80,7 +80,7 @@ Odpowiedź tkwi w jej wyjątkowym **stosunku sygnał do zmęczenia**.
 
 ### Supermoc: Niski poziom zmęczenia
 
-Najważniejszą cechą prawidłowo tempoowanej jazdy wytrzymałościowej jest to, że **generuje cenny sygnał tlenowy przy bardzo małym zmęczeniu**. To jej supermoc.
+Najważniejszą cechą prawidłowo dozowanej jazdy wytrzymałościowej jest to, że **generuje cenny sygnał tlenowy przy bardzo małym zmęczeniu**. To jej supermoc.
 
 Ten niski koszt zmęczenia pozwala na **najpotężniejszy długoterminowy motor formy: wysoką objętość treningową**.
 
@@ -93,7 +93,7 @@ Niskie zmęczenie
     → Głęboka i trwała adaptacja tlenowa
 ```
 
-Jesteś fizycznie ograniczony w liczbie sesji wysokiej intensywności (próg, VO2 max), które możesz wykonać i zregenerować w tygodniu. Jednak ponieważ jazda wytrzymałościowa nie jest bardzo męcząca, **możesz kumulować wiele godzin**. Tydzień treningowy 25 godzin napędzi adaptacje, których 10-godzinny tydzień wysokiej intensywności po prostu nie zduplikuje, szczególnie długoterminowo.
+Jesteś fizycznie ograniczony w liczbie sesji wysokiej intensywności (próg, VO2 max), które możesz wykonać i zregenerować w tygodniu. Jednak ponieważ jazda wytrzymałościowa nie jest bardzo męcząca, **możesz kumulować wiele godzin**. Tydzień treningowy 25 godzin napędzi adaptacje, których 10-godzinny tydzień wysokiej intensywności po prostu nie zapewni, szczególnie długoterminowo.
 
 ---
 
@@ -107,7 +107,7 @@ Jazda wytrzymałościowa powinna być **fundamentem planu treningowego**. Zdolno
 
 ### Dla sportowców "time-crunched" ⏰
 
-Jeśli sportowiec jest ograniczony do kilku krótkich jazd tygodniowo (np. trzy 2-godzinne sesje), **nie traci** priorytetowo traktując intensywność (próg, sweet spot) nad czystą jazdą wytrzymałościową. W tym scenariuszu całkowita objętość jest zbyt niska, by jazda wytrzymałościowa dostarczyła wystarczającego bodźca. Intensywność staje się konieczna do osiągnięcia odpowiedniej dawki treningowej.
+Jeśli sportowiec jest ograniczony do kilku krótkich jazd tygodniowo (np. trzy 2-godzinne sesje), **nie popełnia błędu**, priorytetowo traktując intensywność (próg, sweet spot) nad czystą jazdą wytrzymałościową. W tym scenariuszu całkowita objętość jest zbyt niska, by jazda wytrzymałościowa dostarczyła wystarczającego bodźca. Intensywność staje się konieczna do osiągnięcia odpowiedniej dawki treningowej.
 
 **Adaptacje tlenowe nadal są wywoływane.**
 
@@ -144,7 +144,7 @@ Jazda wytrzymałościowa jest bezcennym narzędziem do:
 
 ---
 
-## 🧠 Część 6: Głąb fizjologii
+## 🧠 Część 6: W głąb fizjologii
 
 ### Zasada Hennemana (Size Principle)
 

@@ -35,7 +35,7 @@ Kluczowe badanie: *"Węglowodany poprawiają wydajność, ale nie wpływają na 
 - Grupa **90 g/h**: ~4 minuty w teście czasowym
 - Grupa **0 g/h**: ~2 minuty w teście czasowym
 
-**Utlanianie substratów (zgodnie z oczekiwaniami):** 🔥
+**Utlenianie substratów (zgodnie z oczekiwaniami):** 🔥
 - Grupa **0 g/h**: spalanie znacznie więcej tłuszczu
 - Grupa **90 g/h**: dominacja węglowodanów
 
@@ -51,7 +51,7 @@ Kluczowe badanie: *"Węglowodany poprawiają wydajność, ale nie wpływają na 
 
 ### ATP - Uniwersalna waluta energetyczna
 
-Energia w ATP nie pochodzi z "łamania" wiązań fosforanowych. Pochodzi z zdolności komórki do utrzymania stanu **głębokiego dysequilibrium**.
+Energia w ATP nie pochodzi z "łamania" wiązań fosforanowych. Pochodzi ze zdolności komórki do utrzymania stanu **głębokiego dysequilibrium**.
 
 #### Stosunek masowy (Mass Action Ratio)
 
@@ -75,7 +75,7 @@ Ta ogromna chemiczna nierównowaga jest jak naciągnięta gumka lub sprężyna. 
 - Powoduje to jej obrót jak turbina
 - Fizycznie zmusza ADP i fosforan do połączenia w ATP
 
-> **Kluczowe:** System jest samoregulujący. Gdy ATP jest zużywany, pojawia się ADP, co natychmiast sygnalizuje turbinię do wirowania.
+> **Kluczowe:** System jest samoregulujący. Gdy ATP jest zużywany, pojawia się ADP, co natychmiast sygnalizuje turbinie potrzebę wirowania.
 
 ---
 
@@ -102,7 +102,7 @@ Czy organizm śledzi każdą cząsteczkę tłuszczu i węglowodanu? **NIE.**
 #### 2. Bilans redoks (Mitochondria) 🔋
 - Stosunek **NADH/NAD+**
 - Gdy "bateria mitochondrialna" jest używana - tworzy "popyt redoks"
-- Napędza zrównoważoną metabolizm tlenowy
+- Napędza zrównoważony metabolizm tlenowy
 
 **Kluczowa różnica między zawodnikiem a amatorem:**
 - ✅ **Zawodnik**: Może zaspokoić wysoki popyt redoks bez obciążenia stanu energetycznego komórki
@@ -128,8 +128,8 @@ ATP słabo dyfunduje przez komórkę. Gęsta sieć mitochondriów rozproszona w 
 #### 3. Rozłożenie obciążenia i homeostaza 🎯 *(NAJWAŻNIEJSZE)*
 
 **Analogia:**
-- Jeden człowiek wybierający wodę z łodzi - szybko się męczy
-- **1000 ludzi** wybierających wodę - każdy pracuje mało, łódź płynie
+- Jeden człowiek wylewający wodę z łodzi - szybko się męczy
+- **1000 ludzi** wylewających wodę - każdy pracuje mało, łódź płynie
 
 **W komórce mięśniowej:**
 - Olbrzymie zapotrzebowanie na energię jest dzielone
@@ -172,7 +172,7 @@ Ostateczna nauka płynąca z tego pogłębionego studium jest elegancko prosta. 
 
 | Zasada | Działanie |
 |--------|-----------|
-| **📈 Progresywna objętość** | Systematycznie wyznaczaj organizm wystarczającą długością treningu |
+| **📈 Progresywna objętość** | Stopniowo zwiększaj czas trwania treningów |
 | **🎯 Docelowa intensywność** | Włączaj próg i VO2 max, aby stymulować pełne spektrum adaptacji |
 | **🥪 Paliwo dla wymaganej pracy** | Dostarczaj organizmowi paliwa potrzebnego do wydajności, regeneracji i adaptacji |
 

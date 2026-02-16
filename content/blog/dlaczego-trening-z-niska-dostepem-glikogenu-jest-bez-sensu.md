@@ -12,7 +12,7 @@ author: "Krzysztof - WielkiKrzych"
 
 Przez lata popularną hipotezą w sporcie wytrzymałościowym było to, że trening z niskimi zapasami glikogenu mięśniowego - często nazywany "training low" - może być skrótem do lepszych adaptacji tlenowych. Główna idea: wysiłek w stanie wyczerpania glikogenu tworzy znaczący stres komórkowy, który wzmacnia sygnały molekularne napędzające poprawę wytrzymałości, takie jak tworzenie nowych mitochondriów.
 
-Ten artykuł rozpakowuje naukę stojącą za tą hipotezą, koncentrując się na kluczowej ścieżce sygnalizacyjnej znanej jako **p38 MAPK**.
+Ten artykuł analizuje naukę stojącą za tą hipotezą, koncentrując się na kluczowej ścieżce sygnalizacyjnej znanej jako **p38 MAPK**.
 
 ---
 
@@ -65,7 +65,7 @@ Kluczowe badanie z udziałem dopasowanych grup sportowców trenujących przez 3 
 
 ---
 
-## ⚠️ Czerwony śledź utleniania tłuszczu
+## ⚠️ Fałszywy trop utleniania tłuszczu
 
 Badacze zauważyli, że grupa niskiego glikogenu wykazywała około **30% wyższe tempo utleniania tłuszczu**. Często podkreślane przez zwolenników "train low".
 
@@ -97,7 +97,7 @@ To najbardziej ekstremalna i kontrproduktywna wersja protokołu "train low". Pog
 Najskuteczniejszym sposobem napędzania adaptacji jest wykonywanie najwyższej jakości treningu, na jaki pozwala Twój organizm. Wymaga to odpowiedniego zaopatrzenia w węglowodany przed i podczas sesji.
 
 ### 🎯 Skup się na wydajności, nie substratach
-Nie daj się złapać w pułapkę prób "nauczenia organizmu spalania tłuszczu". Twój organizm zaadoptuje wykorzystanie paliwa w oparciu o ogólną sprawność.
+Nie daj się złapać w pułapkę prób "nauczenia organizmu spalania tłuszczu". Twój organizm zaadaptuje wykorzystanie paliwa w oparciu o ogólną sprawność.
 
 **Skup się na:**
 - Poprawie mocy wyjściowej

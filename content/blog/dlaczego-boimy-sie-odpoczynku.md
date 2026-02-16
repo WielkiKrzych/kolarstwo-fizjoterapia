@@ -16,7 +16,7 @@ Ta analiza rozkłada na czynniki pierwsze kluczowe koncepcje związane z lękiem
 
 ---
 
-## 🧠 Część 1: Dyskcomfort nieznanego - Rutyna, Nawyki i Tożsamość
+## 🧠 Część 1: Dyskomfort nieznanego - Rutyna, Nawyki i Tożsamość
 
 ### Struktura treningu vs. Dwuznaczność odpoczynku
 
@@ -39,13 +39,13 @@ Ta dwuznaczność tworzy lęk. Sportowiec, przyzwyczajony do jasnej "optymalnej"
 
 ### Trening jako mechanizm radzenia sobie
 
-Podcast z humorem, ale trafnie zauważa, że pochłaniająca natura ciężkiego treningu może służyć jako wygodny sposób na unikanie innych stresorów życiowych - czy to obowiązków domowych, presji w pracy, czy problemów osobistych. Rutyna treningowa daje legitymizację do odłożenia innych odpowiedzialności na później.
+Podcast z humorem, ale trafnie zauważa, że absorbujący charakter ciężkiego treningu może służyć jako wygodny sposób na unikanie innych stresorów życiowych - czy to obowiązków domowych, presji w pracy, czy problemów osobistych. Rutyna treningowa daje legitymizację do odłożenia innych odpowiedzialności na później.
 
 Tydzień odpoczynku usuwa tę tarczę, zmuszając sportowca do zmierzenia się z "garnkiem z gównem na dnie", który ignorował.
 
 ### Odpoczynek jako zagrożenie dla zdrowia psychicznego
 
-Dla wielu konsekwencja treningu jest kamieniem węgielnym ich dobrostanu psychicznego. Rutyna, wyrzut endorfin i poczucie osiągnięcia są siłami stabilizującymi. Gdy to zostaje usunięte, może wywołać negatywną spiralę, sprawiając, że okres odpoczynku wydaje się bardziej szkodliwy niż zmęczenie treningowe, które ma wyleczyć.
+Dla wielu regularność treningu jest kamieniem węgielnym ich dobrostanu psychicznego. Rutyna, wyrzut endorfin i poczucie osiągnięcia są siłami stabilizującymi. Gdy to zostaje usunięte, może wywołać negatywną spiralę, sprawiając, że okres odpoczynku wydaje się bardziej szkodliwy niż zmęczenie treningowe, które ma wyleczyć.
 
 ---
 
@@ -63,7 +63,7 @@ Najlepsze wyniki sportowca to efekt formy *i* świeżości, a nie tylko skumulow
 
 ### Czucie się gorzej przed poczuciem się lepiej
 
-Kluczowym, często niezrozumiałym aspektem regeneracji jest to, że sportowcy często czują się ociężali, cięcy i pozbawieni motywacji przez pierwsze dni tygodnia odpoczynku.
+Kluczowym, często niezrozumiałym aspektem regeneracji jest to, że sportowcy często czują się ociężali, sztywni i pozbawieni motywacji przez pierwsze dni tygodnia odpoczynku.
 
 **Wyjaśnienie tego zjawiska:**
 Ciało wreszcie przechodzi ze stanu wysokiej gotowości i wysokiego stresu do głębokiego trybu regeneracji i naprawy. To fizjologiczne zwolnienie jest często błędnie interpretowane jako oznaka spadku formy, kusząc sportowca do przerwania tygodnia odpoczynku i powrotu do ciężkiego treningu, aby "zatrzymać krwawienie".
@@ -80,7 +80,7 @@ Poleganie na byciu wiecznie "zmasakrowanym" oznacza, że sportowiec konsekwentni
 
 ## 🍽️ Część 3: Praktyczne bariery i błędy behawioralne
 
-### Konfuzja żywieniowa i lęk przed przybraniem wagi
+### Dezorientacja żywieniowa i lęk przed przybraniem wagi
 
 Lęk przed "zatuczeniem się" podczas tygodnia odpoczynku jest wszechobecny. Sportowcy drastycznie ograniczają kalorie, obawiając się, że zmniejszone zużycie energii doprowadzi do przyrostu wagi.
 
@@ -88,7 +88,7 @@ To **krytyczny błąd** z dwóch powodów:
 
 1. **Dług energetyczny:** Ciężki blok treningowy tworzy znaczny dług energetyczny i regeneracyjny. Ciało potrzebuje obfitego paliwa (kalorie, białko) do naprawy uszkodzeń mięśniowych i uzupełnienia zapasów glikogenu. Ten proces trwa przez dni w okresie odpoczynku.
 
-2. **Sygnały głodu:** Intensywny trening może tłumić sygnały głodu. Gdy sportowiec wreszcie odpoczywa, może pojawić się wygłodzenie, gdy ciało sygnalizuje potrzebę spłaty tego długu. Ignorowanie tych sygnałów poprzez niedofurowanie sabotuje proces regeneracji.
+2. **Sygnały głodu:** Intensywny trening może tłumić sygnały głodu. Gdy sportowiec wreszcie odpoczywa, może pojawić się wygłodzenie, gdy ciało sygnalizuje potrzebę spłaty tego długu. Ignorowanie tych sygnałów poprzez niewystarczające odżywianie sabotuje proces regeneracji.
 
 **Jak podkreślają trenerzy:** jesz nie tylko na dzisiejszą jazdę regeneracyjną, ale na trening, który zrobiłeś wczoraj i ten, który zrobisz jutro.
 
@@ -102,20 +102,20 @@ W erze mediów społecznościowych zawsze jest ktoś, gdzieś, kto publikuje epi
 
 Szczególnie dla sportowców w klimatach z ograniczoną liczbą słonecznych dni, presja do treningu, gdy świeci słońce, jest ogromna. Wzięcie dnia odpoczynku podczas idealnego tygodnia może wydawać się zmarnowaną okazją, wymagając elastycznej i długoterminowej perspektywy na trening.
 
-### Fallacja "specjalnego wyjątku"
+### Złudzenie "specjalnego wyjątku"
 
 Wielu sportowców wierzy, że zasady odpoczynku nie dotyczą ich. Racjonalizują:
 - *"Nie jestem zawodowcem World Tour"*
 - *"Trenuję tylko 8 godzin tygodniowo"*  
 - *"Moje treningi nie są tak długie"*
 
-Nie zdają sobie sprawy, że stres treningowy jest względny. Każdy, kto konsekwentnie stosuje bodziec wyzwalający obecne możliwości, będzie kumulował zmęczenie i wymaga odpoczynku do adaptacji, niezależnie od absolutnej objętości treningowej.
+Nie zdają sobie sprawy, że stres treningowy jest względny. Każdy, kto regularnie stosuje bodziec przekraczający obecne możliwości, będzie kumulował zmęczenie i potrzebuje odpoczynku do adaptacji, niezależnie od absolutnej objętości treningowej.
 
 ---
 
 ## 🎯 Część 4: Sztuka i nauka strategicznego odpoczynku
 
-Podcast konkluduje, ujmując odpoczynek nie jako bierną aktywność, ale jako aktywny i strategiczny komponent treningu, który wymaga umiejętności, planowania i komunikacji.
+Podcast podsumowuje, ujmując odpoczynek nie jako bierną aktywność, ale jako aktywny i strategiczny komponent treningu, który wymaga umiejętności, planowania i komunikacji.
 
 ### Odpoczynek zapobiegawczy vs. Reaktywny
 
@@ -150,7 +150,7 @@ To, gdzie dane, samoświadomość i otwarta komunikacja trener-sportowiec stają
 
 ## 🏆 Podsumowanie
 
-Lęk przed odpoczynkiem jest formidalną barierą dla postępu sportowego. Wynika on z pragnienia kontroli w procesie, który wydaje się niekontrolowany, niezrozumienia sygnałów fizjologicznych i mnóstwa presji zewnętrznych.
+Lęk przed odpoczynkiem jest poważną barierą dla postępu sportowego. Wynika on z pragnienia kontroli w procesie, który wydaje się niekontrolowany, niezrozumienia sygnałów fizjologicznych i mnóstwa presji zewnętrznych.
 
 **Kluczowa wskazówka:** Należy przeformułować odpoczynek z pasywnej pustki w aktywny, strategiczny i niezbędny element cyklu treningowego - umiejętność do pielęgnowania z taką samą pilnością jak każda sesja interwałowa.
 

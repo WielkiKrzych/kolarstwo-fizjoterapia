@@ -32,7 +32,7 @@ Podcast wyróżnia kilka czynników związanych z wyższym ryzykiem wystąpienia
 
 ## ❌ Obalenie mitu o elektrolitach i odwodnieniu
 
-Klasyyczna porada "pij więcej i bierz sól" jest już uznawana za przestarzałą jako główne wyjaśnienie EAMCs.
+Klasyczna porada "pij więcej i bierz sól" jest już uznawana za przestarzałą jako główne wyjaśnienie EAMCs.
 
 ### 1. Niezgodność czasowa
 
@@ -70,7 +70,7 @@ Ta teoria proponuje, że skurcz pochodzi z **niezrównoważenia sygnałów na po
 **Teoria:** Gdy stajesz się zmęczony, system wychodzi z równowagi:
 - Aktywność wrzecion mięśniowych wzrasta (**więcej sygnałów "go"**)
 - Aktywność GTO maleje (**mniej sygnałów "stop"**)
-- Wynik: **runaway positive feedback loop** (samowzmacniająca się pętla skurczu)
+- Wynik: **niekontrolowana pętla dodatniego sprzężenia zwrotnego** (samowzmacniająca się pętla skurczu)
 
 > **To wyjaśnia, dlaczego rozciąganie działa!** Forsowne rozciągnięcie skurczonego mięśnia zwiększa napięcie na ścięgnie, co potężnie aktywuje GTO, wysyłając silny sygnał hamujący "rozluźnij!", który przerywa skurcz.
 
@@ -80,7 +80,7 @@ Ta teoria sugeruje, że problem jest bardziej zlokalizowany, występujący na **
 
 **Teoria:** Zmęczenie powoduje nieprawidłową ekscytację końcowych gałęzi nerwu ruchowego. Może to być spowodowane problemami z reabsorpcją kluczowych cząsteczek sygnałowych (wapnia lub acetylocholiny) po skurczu.
 
-Ponieważ rozluźnienie mięśnia to proces aktywny wymagający energii, **zmęczony mięśnie może po prostu mieć problem z zakończeniem fazy rozluźnienia**, prowadząc do utrzymującego się, mimowolnego skurczu.
+Ponieważ rozluźnienie mięśnia to proces aktywny wymagający energii, **zmęczony mięsień może po prostu mieć problem z zakończeniem fazy rozluźnienia**, prowadząc do utrzymującego się, mimowolnego skurczu.
 
 ---
 
@@ -120,7 +120,7 @@ Ponieważ zmęczenie i przekraczanie przygotowania są największymi wyzwalaczam
 
 #### 🏔️ Specyficzność pozycyjna i sprzętowa
 
-Jeśli trenujesz na szosie, ale ścigasz się na MTB, używasz mięśni (przywodziciele, pośladki, core) w nieco inny sposób. Ta nowa formuła może powodować zmęczenie i skurcze w mięśniach, które są inaczej silne.
+Jeśli trenujesz na szosie, ale ścigasz się na MTB, używasz mięśni (przywodziciele, pośladki, core) w nieco inny sposób. Ten nowy schemat pracy może powodować zmęczenie i skurcze w mięśniach, które są inaczej silne.
 
 **Rozwiązanie:** Spędzaj więcej czasu trenując na sprzęcie specyficznym dla wyścigów.
 

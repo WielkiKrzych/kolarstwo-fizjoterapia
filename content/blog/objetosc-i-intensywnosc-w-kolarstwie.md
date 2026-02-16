@@ -79,7 +79,7 @@ Jeśli objętość jest kluczowa, dlaczego nie robić wszystkiego intensywnie? Z
 - Koszt fizjologiczny jest jednak ZNACZNIE wyższy
 - To zmęczenie utrudnia wykonanie interwałów wysokiej intensywności
 
-**🎯 Wskazówka praktyczna:** Większość objętości wytrzymałościowej wykonuj poniżej pierwszego progu laktotowego (LT1) - tempie "całodziennym", pozwalającym na swobodną rozmowę.
+**🎯 Wskazówka praktyczna:** Większość objętości wytrzymałościowej wykonuj poniżej pierwszego progu mleczanowego (LT1) - w tempie "całodziennym", pozwalającym na swobodną rozmowę.
 
 ### 📌 Zasada 3: Interwały to Specyficzność, Nie Objętość
 

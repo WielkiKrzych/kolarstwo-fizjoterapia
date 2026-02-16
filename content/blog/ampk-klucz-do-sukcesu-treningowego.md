@@ -12,7 +12,7 @@ author: "Krzysztof - WielkiKrzych"
 
 W świecie fizjologii wytrzymałościowej niewiele molekuł jest tak sławnych jak **AMPK (AMP-activated protein kinase)**. Często nazywany "głównym regulatorem metabolicznym" lub "komórkowym sensorem energii", AMPK monitoruje status energetyczny komórki i włącza odpowiednie mechanizmy, gdy poziom energii spada.
 
-Ten artykuł eksploruje fascynujący aspekt tej historii, oparty na badaniu z 2009 roku, które ujawniło, że AMPK działa również jako **sensor glikogenu**. Czy to oznacza, że trening "na pusto" (train-low) jest drogą do lepszych adaptacji?
+Ten artykuł przybliża fascynujący aspekt tej historii, oparty na badaniu z 2009 roku, które ujawniło, że AMPK działa również jako **sensor glikogenu**. Czy to oznacza, że trening "na pusto" (train-low) jest drogą do lepszych adaptacji?
 
 ---
 
@@ -29,7 +29,7 @@ Każda komórka działa na **adenozyno-trifosforan (ATP)**. Gdy ATP jest zużywa
 Gdy intensywność wysiłku rośnie, a ATP jest szybko zużywany:
 1. Komórka regeneruje ATP
 2. Jeden mechanizm zamienia dwa ADP w jeden ATP i jeden **AMP (adenozyno-monofosforan)**
-3. Wzrost poziomu AMP to najjaśniejszy sygnał, że komórka ma problem z utrzymaniem popytu energetycznego
+3. Wzrost poziomu AMP to najwyraźniejszy sygnał, że komórka ma problem z utrzymaniem popytu energetycznego
 
 **AMPK to białko, które wyczuwa ten wzrost AMP** 🔍
 
@@ -39,7 +39,7 @@ Aktywacja AMPK nie jest przełącznikiem on/off - to **ściemniacz**. Im więcej
 
 ### Kluczowe działania aktywowanego AMPK
 
-Gdy AMPK jest aktywny, orkiestruje globalną zmianę metabolizmu komórki z magazynowania energii (anabolizm) do produkcji energii (katabolizm):
+Gdy AMPK jest aktywny, koordynuje globalną zmianę metabolizmu komórki z magazynowania energii (anabolizm) do produkcji energii (katabolizm):
 
 | Funkcja | Efekt |
 |---------|-------|
@@ -106,7 +106,7 @@ Hipoteza: **GBD pozwala całemu kompleksowi AMPK fizycznie przyłączyć się do
 **Wyniki kluczowe:** 🔑
 
 1. **Glikogen hamuje AMPK** - im więcej glikogenu, tym niższa aktywność AMPK
-   - To przeformułowuje koncepcję: nie chodzi o to, że niski glikogen *aktywuje* AMPK, ale że obecność glikogenu *hamuje* go
+   - To odwraca dotychczasową koncepcję: nie chodzi o to, że niski glikogen *aktywuje* AMPK, ale że obecność glikogenu *hamuje* go
    - Teoria: gdy AMPK jest związany z dużą cząsteczką glikogenu, jest "uwięziony" i nie może działać na inne cele
 
 2. **Nawet przy obecności AMP**, dodanie glikogenu znacząco hamuje aktywność AMPK
@@ -125,13 +125,13 @@ To najważniejsza lekcja. Na podstawie dowodów molekularnych można wyciągną�
 
 > *"Skoro niski glikogen prowadzi do wyższej aktywacji AMPK, trening w stanie niskiego glikogenu powinien dawać silniejszy sygnał adaptacyjny i prowadzić do lepszych zysków wytrzymałościowych."*
 
-To jest uzasadnienie strategii "train-low" (takich jak jazdy na czczo czy opóźnione odżywianie po treningu). Jednak ten wniosek czyni skok niepoparty szerszymi dowodami naukowymi.
+To jest uzasadnienie strategii "train-low" (takich jak jazdy na czczo czy opóźnione odżywianie po treningu). Jednak ten wniosek stanowi skok logiczny niepoparty szerszymi dowodami naukowymi.
 
 ### Dlaczego bezpośrednia translacja nie działa
 
 | Problem | Wyjaśnienie |
 |---------|-------------|
-| **In-vitro vs. In-vivo** | Eksperymenty były *in-vitro* (w naczyniu). Żywy organizm to nieskończona złożoność systemów |
+| **In-vitro vs. In-vivo** | Eksperymenty były *in-vitro* (w naczyniu). Żywy organizm to nieskończenie złożony system |
 | **Wielkość i czas trwania** | Mierzalny wzrost aktywności AMPK nie oznacza automatycznie, że jest wystarczająco duży i trwa wystarczająco długo, by zrobić różnicę |
 | **Wydajność to cel** | Ostateczną miarą sukcesu strategii treningowej jest wydajność. Literatura pokazuje, że trening na niskim glikogenie **nie poprawia wydajności** i często ją pogarsza |
 | **Negatywne konsekwencje** | Strategie jak opóźnione odżywianie pogarszają regenerację, zaburzają zdrowie metaboliczne i obniżają wydajność następnego dnia |
