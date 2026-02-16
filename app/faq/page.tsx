@@ -125,28 +125,18 @@ export default function FAQPage() {
 
           <div className="space-y-4">
             {faqData.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
+              <div key={index}>
                 <FAQItem
                   question={faq.question}
                   answer={faq.answer}
                   isOpen={openIndex === index}
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
             className="mt-16 text-center"
           >
             <p className="text-white/60 mb-6">
@@ -159,7 +149,7 @@ export default function FAQPage() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

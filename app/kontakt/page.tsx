@@ -128,12 +128,7 @@ export default function ContactPage() {
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               <h2 className="text-3xl font-bold text-white mb-8">
                 Porozmawiajmy o <span className="gradient-text">Twoich celach</span>
               </h2>
@@ -147,12 +142,8 @@ export default function ContactPage() {
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
                       className="flex items-start glass-card rounded-xl p-4"
                     >
                       <div className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 flex-shrink-0" style={{ background: `${info.color}20` }}>
@@ -171,7 +162,7 @@ export default function ContactPage() {
                           </div>
                         )}
                       </div>
-                    </motion.div>
+                    </div>
                   );
                 })}
               </div>
@@ -212,14 +203,9 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+              </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div>
               <div className="glass-card rounded-2xl p-8">
                 {isSuccess ? (
                   <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-12"
@@ -300,7 +286,7 @@ export default function ContactPage() {
                   </>
                 )}
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

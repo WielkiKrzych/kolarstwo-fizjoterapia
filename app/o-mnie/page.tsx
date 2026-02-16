@@ -92,18 +92,14 @@ export default function AboutPage() {
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <motion.div
+                <div
                   key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="glass-card rounded-2xl p-6 text-center"
                 >
                   <Icon className="w-8 h-8 text-[#00f0ff] mx-auto mb-4" />
                   <div className="text-3xl font-bold gradient-text mb-2">{stat.value}</div>
                   <div className="text-white/60 text-sm">{stat.label}</div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -114,12 +110,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00f0ff]/5 to-transparent pointer-events-none" />
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h2 className="text-4xl font-bold text-white mb-8 text-center">
               Moja <span className="gradient-text">historia</span>
             </h2>
@@ -142,38 +133,29 @@ export default function AboutPage() {
                 jak i zaawansowanymi zawodnikami.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       <section className="py-20 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h2 className="text-4xl font-bold text-white mb-8 text-center">
               Certyfikaty & <span className="gradient-text">Uprawnienia</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-4">
               {certifications.map((cert, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-center space-x-3 glass-card rounded-xl p-4"
                 >
                   <Award className="w-6 h-6 text-[#00f0ff] flex-shrink-0" />
                   <span className="text-white/80">{cert}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -181,11 +163,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#00f0ff]/10 via-[#b829dd]/10 to-[#ff00ff]/10 pointer-events-none" />
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
             className="glass-card rounded-3xl p-12"
           >
             <h2 className="text-4xl font-bold text-white mb-6">
@@ -202,7 +180,7 @@ export default function AboutPage() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

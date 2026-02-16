@@ -94,13 +94,13 @@ export default function HomePage() {
               { icon: Bike, title: "Dyscypliny", desc: "Kolarstwo szosowe/TT/rekreacyjne/ultra, bieganie, pływanie, treningi siłowe", color: "#00f0ff" },
               { icon: Sparkles, title: "Innowacje", desc: "Najnowsze metody treningowe", color: "#ff00ff" },
             ].map((feature, index) => (
-              <motion.div key={feature.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1 }} viewport={{ once: true }} className="glass-card rounded-2xl p-8 group">
+              <div key={feature.title} className="glass-card rounded-2xl p-8 group">
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ background: `${feature.color}20`, border: `1px solid ${feature.color}40` }}>
                   <feature.icon className="w-7 h-7" style={{ color: feature.color }} />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
                 <p className="text-white/50">{feature.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

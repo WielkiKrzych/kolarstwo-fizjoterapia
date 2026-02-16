@@ -91,11 +91,7 @@ export default function GalleryPage() {
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
             className="flex flex-wrap gap-4 justify-center mb-12"
           >
             {categories.map((category) => (
@@ -112,23 +108,15 @@ export default function GalleryPage() {
                 {category.name}
               </button>
             ))}
-          </motion.div>
+          </div>
 
           {/* Gallery Grid */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {filteredImages.map((image, index) => (
               <motion.div
                 key={image.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
                 className="cursor-pointer group"
               >
@@ -174,14 +162,10 @@ export default function GalleryPage() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
             className="text-center mt-16"
           >
             <p className="text-xl text-white/60 mb-8">
@@ -194,7 +178,7 @@ export default function GalleryPage() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

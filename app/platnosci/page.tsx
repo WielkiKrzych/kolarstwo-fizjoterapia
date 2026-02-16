@@ -123,12 +123,8 @@ export default function CennikPage() {
             {pricingPlans.map((plan, index) => {
               const Icon = plan.icon;
               return (
-                <motion.div
+                <div
                   key={plan.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className={`glass-card rounded-2xl p-8 relative ${plan.popular ? 'border-2' : ''}`}
                   style={{ borderColor: plan.popular ? plan.color : undefined }}
                 >
@@ -179,7 +175,7 @@ export default function CennikPage() {
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -191,13 +187,7 @@ export default function CennikPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#ff00ff]/5 to-transparent pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-white">Fizjoterapia{" "}</span>
               <span className="gradient-text">Zdalna</span>
@@ -205,16 +195,12 @@ export default function CennikPage() {
             <p className="text-xl text-white/60">
               Profesjonalna pomoc bez wychodzenia z domu
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {therapyPricing.map((item, index) => (
-              <motion.div
+              <div
                 key={item.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="glass-card rounded-2xl p-8 text-center"
               >
                 <h3 className="text-xl font-bold text-white mb-2">{item.name}</h3>
@@ -231,7 +217,7 @@ export default function CennikPage() {
                     Umów wizytę
                   </button>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -242,13 +228,7 @@ export default function CennikPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#00f0ff]/10 via-[#b829dd]/10 to-[#ff00ff]/10 pointer-events-none" />
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="glass-card rounded-3xl p-12"
-          >
+          <div className="glass-card rounded-3xl p-12">
             <h2 className="text-4xl font-bold text-white mb-6">
               Masz pytania?{" "}
               <span className="gradient-text">Napisz do mnie!</span>
@@ -263,7 +243,7 @@ export default function CennikPage() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>

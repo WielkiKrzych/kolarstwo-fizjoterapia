@@ -191,13 +191,7 @@ export default function FizjoterapiaPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00f0ff]/5 to-transparent pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-white">Nasze{" "}</span>
               <span className="gradient-text">usługi</span>
@@ -205,23 +199,19 @@ export default function FizjoterapiaPage() {
             <p className="text-xl text-white/60">
               Kompleksowa opieka fizjoterapeutyczna dla kolarzy
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {therapyServices.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="glass-card rounded-2xl p-8 text-center group hover:scale-105 transition-transform"
               >
                 <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
                 <p className="text-white/50">{service.description}</p>
                 <div className="mt-4 w-12 h-1 rounded-full mx-auto" style={{ background: service.color }} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -230,13 +220,7 @@ export default function FizjoterapiaPage() {
       {/* How It Works Section */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-white">Jak to{" "}</span>
               <span className="gradient-text">działa?</span>
@@ -244,16 +228,12 @@ export default function FizjoterapiaPage() {
             <p className="text-xl text-white/60">
               Proces jest prosty i wygodny
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {howItWorks.map((step, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative"
               >
                 {index < howItWorks.length - 1 && (
@@ -266,7 +246,7 @@ export default function FizjoterapiaPage() {
                   <h3 className="text-center text-lg font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-center text-white/50">{step.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
