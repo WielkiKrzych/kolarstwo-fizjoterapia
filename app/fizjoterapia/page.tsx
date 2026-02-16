@@ -170,12 +170,8 @@ export default function FizjoterapiaPage() {
             {therapyFeatures.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="glass-card rounded-2xl p-8 group hover:scale-105 transition-transform"
                 >
                   <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style={{ background: `${feature.color}20`, border: `1px solid ${feature.color}40` }}>
@@ -183,7 +179,7 @@ export default function FizjoterapiaPage() {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
                   <p className="text-white/50">{feature.description}</p>
-                </motion.div>
+                </div>
               );
             })}
           </div>
