@@ -209,16 +209,26 @@ const faqData = [
 ];
 ```
 
-### Dodanie zdjęcia w "O mnie"
+### Dodanie zdjęć w "O mnie" (Carousel)
 
-1. Dodaj zdjęcie do folderu `public/images/`
-2. W `app/o-mnie/page.tsx` zamień:
+1. Dodaj zdjęcia do folderu `public/images/`
+2. W `app/o-mnie/page.tsx` w komponencie `PhotoCarousel` dodaj ścieżki do zdjęć:
 ```tsx
-// Z:
-<div className="text-8xl mb-4">👤</div>
+<PhotoCarousel
+  images={[
+    { src: "/images/twoje-zdjecie-1.jpg", alt: "Opis 1" },
+    { src: "/images/twoje-zdjecie-2.jpg", alt: "Opis 2" },
+    // dodaj więcej...
+  ]}
+  autoPlay={true}
+  interval={4000}
+/>
+```
 
-// Na:
-<img src="/images/twoje-zdjecie.jpg" alt="Twoje Imię" className="w-full h-full object-cover" />
+Carousel automatycznie:
+- Przewija zdjęcia co 4 sekundy
+- Resetuje czas po ręcznym kliknięciu
+- Pokazuje nawigację strzałkami i kropkami
 ```
 
 ### Zmiana kolorów
@@ -407,12 +417,13 @@ Pull requesty są mile widziane! Przed dużymi zmianami otwórz issue, żeby prz
 - [x] Dynamic sitemap/robots
 
 ### 🚧 W trakcie
-- [ ] Prawdziwe zdjęcia do galerii
-- [ ] Prawdziwe treści (teksty o treningach)
+- [x] Prawdziwe zdjęcia do galerii (carousel 18 zdjęć)
+- [x] Prawdziwe treści o mnie (historia, motto, certyfikaty)
+- [x] Skonfigurowany formularz kontaktowy (Formspree)
 
 ### 📝 Do zrobienia
-- [ ] Podłączyć własne konta social media
-- [ ] Skonfigurować Formspree
+- [x] Podłączyć własne konta social media
+- [x] Skonfigurować Formspree
 - [ ] Dodać OG image (/public/images/og-default.jpg)
 - [ ] Wdrożyć na produkcję (Vercel/Netlify)
 
