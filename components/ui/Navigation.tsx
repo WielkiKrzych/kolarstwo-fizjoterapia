@@ -13,6 +13,7 @@ export function Navigation() {
     { href: "/o-mnie", label: "O mnie" },
     { href: "/treningi", label: "Treningi" },
     { href: "/fizjoterapia", label: "Fizjoterapia" },
+    { href: "/badania-wydolnosciowe", label: "Badania Wydolnościowe" },
     { href: "/blog", label: "Blog" },
     { href: "/faq", label: "FAQ" },
     { href: "/kontakt", label: "Kontakt" },
